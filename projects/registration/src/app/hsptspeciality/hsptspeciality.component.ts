@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpecialityService } from '../services/speciality.service';
 
 @Component({
   selector: 'app-hsptspeciality',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsptspecialityComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specialityService: SpecialityService) { }
+  specialities: any;
 
   ngOnInit(): void {
+    this.specialityService.getSpeciality().subscribe((data: any) => {
+      this.specialities = data;
+    });
   }
 
 }
