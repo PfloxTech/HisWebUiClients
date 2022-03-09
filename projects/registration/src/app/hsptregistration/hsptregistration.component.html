@@ -6,75 +6,36 @@
             </h6>
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-2">
         <div class="col-12">
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                Hospital Details
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-                            <app-hsptgeneralinfo></app-hsptgeneralinfo>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Hospital Address
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Hospital Address
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Hospital Contact
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Hospital Contact
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingFour">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseFour" aria-expanded="false" aria-controls="headingFour">
-                                    Hospital Secilities
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Hospital Secility
-                            </div>
-                        </div>
-                    </div>
+            <fieldset class="border rounded-3 p-3">
+                <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
+                <div>
+                    <app-hsptgeneralinfo></app-hsptgeneralinfo>
                 </div>
-            </div>
+            </fieldset>
         </div>
     </div>
+
+    <div class="row mt-2">
+        <div class="col-12">
+            <fieldset class="border rounded-3 p-3">
+                <legend class="float-none w-auto px-3">Hospital Contact Address</legend>
+                <div>
+                    <app-hsptcontact></app-hsptcontact>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <fieldset class="border rounded-3 p-3">
+                <legend class="float-none w-auto px-3">Hospital Speciality</legend>
+                <div>
+                    <app-hsptspeciality></app-hsptspeciality>
+                </div>
+            </fieldset>
+        </div>
+    </div>    
+    
 </div>

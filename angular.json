@@ -54,7 +54,8 @@
             ],
             "styles": [
               "projects/registration/src/styles.less",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/registration/src/assets/css/bootstrap-override.less"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -125,7 +126,8 @@
             ],
             "styles": [
               "projects/registration/src/styles.less",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/registration/src/assets/css/bootstrap-override.less"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
