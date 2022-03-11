@@ -14,6 +14,7 @@ import { ChecklistComponent } from './shared/checklist/checklist.component';
 import { HsptproviderComponent } from './hsptprovider/hsptprovider.component';
 import { HsptinsuranceComponent } from './hsptinsurance/hsptinsurance.component';
 import { HsptayushComponent } from './hsptayush/hsptayush.component';
+import { HsptmiscellaneousComponent } from './hsptmiscellaneous/hsptmiscellaneous.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HsptayushComponent } from './hsptayush/hsptayush.component';
     ChecklistComponent,
     HsptproviderComponent,
     HsptinsuranceComponent,
-    HsptayushComponent
+    HsptayushComponent,
+    HsptmiscellaneousComponent
   ],
   imports: [
     BrowserModule,

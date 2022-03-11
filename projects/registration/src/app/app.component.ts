@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'Registration';
+  hideRegistration: boolean = true;
+  title = 'Hospital Information System';
+
+  constructor() { }
+
+  priceModel(modelId: number): void {
+    this.hideRegistration = false;
+  }
+
 }

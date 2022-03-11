@@ -1,14 +1,14 @@
 <div class="container-fluid">
     <div class="row bg-primary text-white">
         <div class="col-12 text-center">
-            <h6>
+            <h6 class="mt-2 mb-2">
                 Hospital Registration
             </h6>
         </div>
     </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
                 <div>
                     <app-hsptgeneralinfo></app-hsptgeneralinfo>
@@ -16,11 +16,10 @@
             </fieldset>
         </div>
     </div>
-
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
-                <legend class="float-none w-auto px-3">Hospital Contact Address</legend>
+            <fieldset class="border rounded-3 p-3 border-primary">
+                <legend class="float-none w-auto px-3">Hospital Contacts</legend>
                 <div>
                     <app-hsptcontact></app-hsptcontact>
                 </div>
@@ -29,52 +28,67 @@
     </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
+                <legend class="float-none w-auto px-3">Hospital Miscellaneous</legend>
+                <div>
+                    <app-hsptmiscellaneous></app-hsptmiscellaneous>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital Provider</legend>
                 <div>
                     <app-hsptprovider></app-hsptprovider>
                 </div>
             </fieldset>
         </div>
-    </div>    
+    </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital Feciality</legend>
                 <div>
                     <app-hsptfacility></app-hsptfacility>
                 </div>
             </fieldset>
         </div>
-    </div>    
+    </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital Speciality</legend>
                 <div>
                     <app-hsptspeciality></app-hsptspeciality>
                 </div>
             </fieldset>
         </div>
-    </div>    
+    </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital Insurance</legend>
                 <div>
                     <app-hsptinsurance></app-hsptinsurance>
                 </div>
             </fieldset>
         </div>
-    </div>  
+    </div>
     <div class="row mt-2">
         <div class="col-12">
-            <fieldset class="border rounded-3 p-3">
+            <fieldset class="border rounded-3 p-3 border-primary">
                 <legend class="float-none w-auto px-3">Hospital Ayush</legend>
                 <div>
                     <app-hsptayush></app-hsptayush>
                 </div>
             </fieldset>
         </div>
-    </div>      
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <button type="button" class="btn btn-primary btn-right">Submit</button>
+        </div>
+    </div>
 </div>
