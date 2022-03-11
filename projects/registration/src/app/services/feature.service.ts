@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SpecialityService {
+export class FeatureService {
 
   constructor(private readonly httpClient: HttpClient) { }
 

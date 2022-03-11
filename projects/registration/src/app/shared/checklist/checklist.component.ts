@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SpecialityService } from '../../services/speciality.service';
+import { FeatureService } from '../../services/feature.service';
 
 @Component({
   selector: 'app-checklist',
@@ -11,11 +11,11 @@ export class ChecklistComponent implements OnInit {
   checklist: any = [];
   @Input() method = '';
 
-  constructor(private specialityService: SpecialityService) { }
+  constructor(private featureService: FeatureService) { }
 
   featureList: any;
   ngOnInit(): void {
-    this.featureList = this.specialityService.getFeature(this.method)
+    this.featureList = this.featureService.getFeature(this.method)
       .subscribe((data: any) => {
         this.featureList = data;
       });

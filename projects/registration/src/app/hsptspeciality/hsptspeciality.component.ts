@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SpecialityService } from '../services/speciality.service';
 
 @Component({
   selector: 'app-hsptspeciality',
@@ -8,11 +7,10 @@ import { SpecialityService } from '../services/speciality.service';
 })
 export class HsptspecialityComponent implements OnInit {
 
-  constructor(private specialityService: SpecialityService) { }
-  specialities: any;
+  constructor() { }
   methodName = "GetSpeciality";
   ngOnInit(): void {
-    
+
   }
 
 }
