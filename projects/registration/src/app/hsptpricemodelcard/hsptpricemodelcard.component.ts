@@ -14,7 +14,7 @@ export class HsptpricemodelcardComponent implements OnInit {
   }
 
   priceModel(modelId: number): void {
-    this.router.navigate(["registration"]);
+    this.router.navigate(["hospital-registration"]);
   }
 
 }

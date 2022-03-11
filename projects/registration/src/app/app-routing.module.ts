@@ -4,7 +4,7 @@ import { HspthomeComponent } from './hspthome/hspthome.component';
 import { HsptregistrationComponent } from './hsptregistration/hsptregistration.component';
 
 const routes: Routes = [{ path: '', component: HspthomeComponent },
-{ path: 'registration', component: HsptregistrationComponent }];
+{ path: 'hospital-registration', component: HsptregistrationComponent }];
 
 const routesConfig: ExtraOptions = { scrollPositionRestoration: 'enabled' };
 
