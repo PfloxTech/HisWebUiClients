@@ -10,11 +10,9 @@ export class HsptspecialityComponent implements OnInit {
 
   constructor(private specialityService: SpecialityService) { }
   specialities: any;
-
+  methodName = "GetSpeciality";
   ngOnInit(): void {
-    this.specialityService.getSpeciality().subscribe((data: any) => {
-      this.specialities = data;
-    });
+    
   }
 
 }

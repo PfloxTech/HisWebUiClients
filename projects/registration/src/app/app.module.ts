@@ -10,6 +10,10 @@ import { HsptaddressComponent } from './hsptaddress/hsptaddress.component';
 import { HsptcontactComponent } from './hsptcontact/hsptcontact.component';
 import { HsptfacilityComponent } from './hsptfacility/hsptfacility.component';
 import { HsptspecialityComponent } from './hsptspeciality/hsptspeciality.component';
+import { ChecklistComponent } from './shared/checklist/checklist.component';
+import { HsptproviderComponent } from './hsptprovider/hsptprovider.component';
+import { HsptinsuranceComponent } from './hsptinsurance/hsptinsurance.component';
+import { HsptayushComponent } from './hsptayush/hsptayush.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { HsptspecialityComponent } from './hsptspeciality/hsptspeciality.compone
     HsptaddressComponent,
     HsptcontactComponent,
     HsptfacilityComponent,
-    HsptspecialityComponent
+    HsptspecialityComponent,
+    ChecklistComponent,
+    HsptproviderComponent,
+    HsptinsuranceComponent,
+    HsptayushComponent
   ],
   imports: [
     BrowserModule,
