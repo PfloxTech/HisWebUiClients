@@ -15,6 +15,9 @@ import { HsptproviderComponent } from './hsptprovider/hsptprovider.component';
 import { HsptinsuranceComponent } from './hsptinsurance/hsptinsurance.component';
 import { HsptayushComponent } from './hsptayush/hsptayush.component';
 import { HsptmiscellaneousComponent } from './hsptmiscellaneous/hsptmiscellaneous.component';
+import { HsptpricemodelcardComponent } from './hsptpricemodelcard/hsptpricemodelcard.component';
+import { HsptcarouselComponent } from './hsptcarousel/hsptcarousel.component';
+import { HspthomeComponent } from './hspthome/hspthome.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { HsptmiscellaneousComponent } from './hsptmiscellaneous/hsptmiscellaneou
     HsptproviderComponent,
     HsptinsuranceComponent,
     HsptayushComponent,
-    HsptmiscellaneousComponent
+    HsptmiscellaneousComponent,
+    HsptpricemodelcardComponent,
+    HsptcarouselComponent,
+    HspthomeComponent
   ],
   imports: [
     BrowserModule,
