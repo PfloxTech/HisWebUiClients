@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsptfacilityComponent implements OnInit {
 
-  methodName = "GetFacelity"
+  methodName = "GetFacility"
   constructor() { }
 
   ngOnInit(): void {
