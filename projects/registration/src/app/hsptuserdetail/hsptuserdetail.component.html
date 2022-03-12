@@ -89,7 +89,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
-                        <input type="text" class="form-control" id="txtPassword" [(ngModel)]="UserModel.Password" />
+                        <input type="password" class="form-control" id="txtPassword" [(ngModel)]="UserModel.Password" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -99,7 +99,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
-                        <input type="text" class="form-control" id="txtConFirmPassword"
+                        <input type="password" class="form-control" id="txtConFirmPassword"
                             [(ngModel)]="UserModel.ConfirmPassword" />
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/security.png" /></span>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="password" class="form-control" id="txtHsptName" />
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
 </div>
 <div class="row mt-2">
     <div class="col-12">
-        <button type="button" class="btn btn-primary btn-right mr-2 ms-2" (click)="next()">Next</button>
+        <button type="button" class="btn btn-primary btn-right mr-2 ms-2" (click)="next()">Submit</button>
         <button type="button" class="btn btn-primary btn-right" (click)="back()">Back</button>
     </div>
 </div>
