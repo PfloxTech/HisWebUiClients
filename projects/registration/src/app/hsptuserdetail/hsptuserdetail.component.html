@@ -12,47 +12,47 @@
             <div class="row">
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtFirstName" class="form-label">
                             First Name<span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtFirstName" [(ngModel)]="UserModel.FirstName" />
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtMiddleName" class="form-label">
                             Middle Name
                         </label>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtMidleName" [(ngModel)]="UserModel.MiddleName" />
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtLastName" class="form-label">
                             Last Name
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtLastName" [(ngModel)]="UserModel.LastName" />
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtEmailId" class="form-label">
                             EmailId
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtEmailId" [(ngModel)]="UserModel.EmailId" />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
                     <div class="mb-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtPhone" class="form-label">
                             Phone
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtPhone" [(ngModel)]="UserModel.Phone" />
                     </div>
                 </div>
             </div>
@@ -77,8 +77,9 @@
                         Email Id\Mobile No\User Id<span class="text-danger">*</span>
                     </label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2"><img src="../../assets/img/man.png" /></span>
-                        <input type="text" class="form-control" id="txtHsptName" aria-describedby="basic-addon2" />
+                        <span class="input-group-text" id="spanLogonId"><img src="../../assets/img/man.png" /></span>
+                        <input type="text" class="form-control" id="txtLogonId" aria-describedby="basic-addon2"
+                            [(ngModel)]="UserModel.LogonId" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -88,7 +89,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtPassword" [(ngModel)]="UserModel.Password" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -98,7 +99,8 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
-                        <input type="text" class="form-control" id="txtHsptName" />
+                        <input type="text" class="form-control" id="txtConFirmPassword"
+                            [(ngModel)]="UserModel.ConfirmPassword" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -117,7 +119,7 @@
 </div>
 <div class="row mt-2">
     <div class="col-12">
-        <button type="button" class="btn btn-primary btn-right mr-2 ms-2" (click)="next()" >Next</button>
+        <button type="button" class="btn btn-primary btn-right mr-2 ms-2" (click)="next()">Next</button>
         <button type="button" class="btn btn-primary btn-right" (click)="back()">Back</button>
     </div>
 </div>
