@@ -19,6 +19,8 @@ import { HsptmiscellaneousComponent } from './hsptmiscellaneous/hsptmiscellaneou
 import { HsptpricemodelcardComponent } from './hsptpricemodelcard/hsptpricemodelcard.component';
 import { HsptcarouselComponent } from './hsptcarousel/hsptcarousel.component';
 import { HspthomeComponent } from './hspthome/hspthome.component';
+import { HsptuserdetailComponent } from './hsptuserdetail/hsptuserdetail.component';
+import { HsptwelcomeComponent } from './hsptwelcome/hsptwelcome.component';
 
 function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => Promise<boolean> {
   return (): Promise<boolean> => {
@@ -47,7 +49,9 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
     HsptmiscellaneousComponent,
     HsptpricemodelcardComponent,
     HsptcarouselComponent,
-    HspthomeComponent
+    HspthomeComponent,
+    HsptuserdetailComponent,
+    HsptwelcomeComponent
   ],
   imports: [
     BrowserModule,

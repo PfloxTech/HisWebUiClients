@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hsptregistration',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsptregistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  next(): void {
+    this.router.navigate(["hospital-user"]);
+  }
+
+  back (): void {
+    this.router.navigate([""]);
   }
 
 }
