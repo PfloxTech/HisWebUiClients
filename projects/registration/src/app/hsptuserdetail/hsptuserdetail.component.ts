@@ -26,7 +26,8 @@ export class HsptuserdetailComponent implements OnInit {
   next(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
     this.hsptModel.HsptUser = this.UserModel;
-    this.hsptRgisterService.register(this.hsptModel);
+    this.hsptRgisterService.register(this.hsptModel).subscribe(data => {
+    });
     this.router.navigate(["hospital-welcome"]);
   }
 }

@@ -13,7 +13,7 @@ export class HsptregisterService {
   constructor(private httpClient: HttpClient, private config: AppConfig) { }
 
   register(model: HsptModel) {
-    return this.httpClient.post(`${this.config.baseUrl}/api/RegisterHospital`, model)
+    return this.httpClient.post(`${this.config.baseUrl}api/Registration/RegisterHospital`, model)
   }
 
   setRegisterModel(_hsptModel: HsptModel) {
