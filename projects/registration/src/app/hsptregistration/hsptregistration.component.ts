@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HsptModel } from '../models/hsptmodel';
+import { HsptregisterService } from '../services/hsptregister.service';
 
 @Component({
   selector: 'app-hsptregistration',
@@ -7,17 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./hsptregistration.component.less']
 })
 export class HsptregistrationComponent implements OnInit {
+  hospitalModel: HsptModel = new HsptModel();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private hsptRgisterService: HsptregisterService) {
+
+  }
 
   ngOnInit(): void {
   }
 
   next(): void {
+    this.hsptRgisterService.setRegisterModel(this.hospitalModel);
     this.router.navigate(["hospital-user"]);
   }
 
-  back (): void {
+  back(): void {
     this.router.navigate([""]);
   }
 

@@ -10,7 +10,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
             <div>
-                <app-hsptgeneralinfo></app-hsptgeneralinfo>
+                <app-hsptgeneralinfo [hsptModel]="hospitalModel"></app-hsptgeneralinfo>
             </div>
         </fieldset>
     </div>
@@ -20,7 +20,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Contacts</legend>
             <div>
-                <app-hsptcontact></app-hsptcontact>
+                <app-hsptcontact [hsptContactModel]="hospitalModel.HsptContact"></app-hsptcontact>
             </div>
         </fieldset>
     </div>

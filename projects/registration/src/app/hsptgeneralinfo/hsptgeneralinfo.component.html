@@ -4,7 +4,7 @@
             <label for="txtHsptName" class="form-label">
                 Hospital Name<span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptName" [(ngModel)]="hsptModel.HospitalName" />
         </div>
     </div>
     <div class="col-3">
@@ -57,7 +57,7 @@
         <div class="mb-3">
             <label for="txtAccreditation" class="form-label">
                 Accreditation <i>(For e.g NABH/NABL/JCI/ISO/Others) (For Hospital/Blood Bank/
-                        Laboratory)</i>
+                    Laboratory)</i>
             </label>
             <textarea class="form-control" id="txtAccreditation" rows="3"></textarea>
         </div>
