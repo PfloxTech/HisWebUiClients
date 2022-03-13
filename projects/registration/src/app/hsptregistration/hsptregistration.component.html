@@ -30,7 +30,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Miscellaneous</legend>
             <div>
-                <app-hsptmiscellaneous></app-hsptmiscellaneous>
+               <app-hsptmiscellaneous [hsptMiscellaneousModel]="hospitalModel.HsptMiscellaneous"></app-hsptmiscellaneous>
             </div>
         </fieldset>
     </div>
@@ -40,7 +40,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Provider</legend>
             <div>
-                <app-hsptprovider></app-hsptprovider>
+                <app-hsptprovider [HsptProvider]="hospitalModel.HsptProviders"></app-hsptprovider>
             </div>
         </fieldset>
     </div>
@@ -50,7 +50,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Feciality</legend>
             <div>
-                <app-hsptfacility></app-hsptfacility>
+                <app-hsptfacility [HsptFacilities]="hospitalModel.HsptFacilities"></app-hsptfacility>
             </div>
         </fieldset>
     </div>
@@ -60,7 +60,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Speciality</legend>
             <div>
-                <app-hsptspeciality></app-hsptspeciality>
+                <app-hsptspeciality [HsptSpecialities]="hospitalModel.HsptSpecialities"></app-hsptspeciality>
             </div>
         </fieldset>
     </div>
@@ -70,7 +70,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Insurance</legend>
             <div>
-                <app-hsptinsurance></app-hsptinsurance>
+                <app-hsptinsurance [HsptInsurances]="hospitalModel.HsptInsurances"></app-hsptinsurance>
             </div>
         </fieldset>
     </div>
@@ -80,7 +80,7 @@
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital Ayush</legend>
             <div>
-                <app-hsptayush></app-hsptayush>
+                <app-hsptayush [hsptAyushModel]="hospitalModel.HsptAyush"></app-hsptayush>
             </div>
         </fieldset>
     </div>

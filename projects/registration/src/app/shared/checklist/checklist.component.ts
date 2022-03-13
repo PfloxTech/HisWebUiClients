@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FeatureService } from '../../services/feature.service';
+import { FetaureModel } from '../../models/FeatureModel';
 
 @Component({
   selector: 'app-checklist',
@@ -8,16 +9,25 @@ import { FeatureService } from '../../services/feature.service';
 })
 export class ChecklistComponent implements OnInit {
 
-  checklist: any = [];
+  checklist: Array<FetaureModel> = new Array<FetaureModel>();
   @Input() method = '';
+  @Input() featureParentList: Array<FetaureModel> = new Array<FetaureModel>();
 
   constructor(private featureService: FeatureService) { }
 
-  featureList: any;
+  //featureList: any;
   ngOnInit(): void {
-    this.featureList = this.featureService.getFeature(this.method)
+    this.featureService.getFeature(this.method)
       .subscribe((data: any) => {
-        this.featureList = data;
+        this.checklist = data;
+        this.checklist.forEach(item => {
+          var feature = new FetaureModel();
+          feature.id = item.id;
+          feature.displayName = item.displayName;
+          feature.isSelected=false;
+          this.featureParentList.push(feature);
+        });
+        // this.featureParentList = this.featureList;
       });
   }
 

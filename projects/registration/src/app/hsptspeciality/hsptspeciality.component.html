@@ -1,7 +1,1 @@
-
-<!--<div class="form-check form-check-inline" *ngFor="let speciality of specialities">
-    <input class="form-check-input" type="checkbox" id="chk{{speciality.id}}" />
-    <label class="form-check-label" for="inlineCheckbox1">{{speciality.displayName}}</label>
-  </div>-->
-
-  <app-checklist [method]="methodName"></app-checklist>
+<app-checklist [method]="methodName" [featureParentList]="HsptSpecialities"></app-checklist>

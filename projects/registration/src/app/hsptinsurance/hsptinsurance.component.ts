@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { FetaureModel } from '../models/FeatureModel';
 
 @Component({
   selector: 'app-hsptinsurance',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsptinsuranceComponent implements OnInit {
   methodName = "GetInsurance";
+  @Input()
+  HsptInsurances: Array<FetaureModel> = new Array<FetaureModel>();
+
   constructor() { }
 
   ngOnInit(): void {
