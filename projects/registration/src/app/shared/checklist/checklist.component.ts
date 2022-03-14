@@ -22,12 +22,11 @@ export class ChecklistComponent implements OnInit {
         this.checklist = data;
         this.checklist.forEach(item => {
           var feature = new FetaureModel();
-          feature.id = item.id;
-          feature.displayName = item.displayName;
+          feature.pk = item.pk;
+          feature.displayText = item.displayText;
           feature.isSelected=false;
           this.featureParentList.push(feature);
         });
-        // this.featureParentList = this.featureList;
       });
   }
 

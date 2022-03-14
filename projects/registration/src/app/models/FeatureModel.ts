@@ -1,5 +1,5 @@
 export class FetaureModel {
-    public id: number = 0;
-    public displayName: string = '';
+    public pk: number = 0;
+    public displayText: string = '';
     public isSelected: boolean = false;
 }
