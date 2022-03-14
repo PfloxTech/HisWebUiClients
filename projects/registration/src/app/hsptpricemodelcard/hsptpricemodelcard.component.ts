@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HsptregisterService } from '../services/hsptregister.service';
+import { BillingModel } from '../models/BillingModel';
 
 @Component({
   selector: 'app-hsptpricemodelcard',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class HsptpricemodelcardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  priceList: Array<BillingModel> = new Array<BillingModel>();
+  constructor(private router: Router, private registerService: HsptregisterService) { }
 
   ngOnInit(): void {
+    this.registerService.getBilling().subscribe((data: any) => {
+      this.priceList = data;
+    });
   }
 
   priceModel(modelId: number): void {

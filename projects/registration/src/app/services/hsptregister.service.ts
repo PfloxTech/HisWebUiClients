@@ -16,6 +16,10 @@ export class HsptregisterService {
     return this.httpClient.post(`${this.config.baseUrl}api/Registration/RegisterHospital`, model)
   }
 
+  getBilling(){
+    return this.httpClient.get(`${this.config.baseUrl}api/Registration/getBilling`);
+  }
+
   setRegisterModel(_hsptModel: HsptModel) {
     this.hsptModel = _hsptModel;
   }
