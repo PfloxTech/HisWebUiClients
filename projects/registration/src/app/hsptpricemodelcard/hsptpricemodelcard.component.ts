@@ -14,9 +14,7 @@ export class HsptpricemodelcardComponent implements OnInit {
   constructor(private router: Router, private registerService: HsptregisterService) { }
 
   ngOnInit(): void {
-    this.registerService.getBilling().subscribe((data: any) => {
-      this.priceList = data;
-    });
+    this.registerService.getBilling().subscribe(data => { this.priceList = data });
   }
 
   priceModel(modelId: number): void {

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppConfig } from '../AppConfig';
 import { HsptModel } from '../models/hsptmodel';
+import { BillingModel } from '../models/BillingModel';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +18,15 @@ export class HsptregisterService {
     return this.httpClient.post(`${this.config.baseUrl}api/Registration/RegisterHospital`, model)
   }
 
-  getBilling(){
-    return this.httpClient.get(`${this.config.baseUrl}api/Registration/getBilling`);
+  getBilling(): Observable<Array<BillingModel>> {
+    return this.httpClient.get<Array<BillingModel>>(`${this.config.baseUrl}api/Registration/getBilling`);
   }
 
   setRegisterModel(_hsptModel: HsptModel) {
     this.hsptModel = _hsptModel;
   }
 
-  getRegisterModel() :HsptModel {
+  getRegisterModel(): HsptModel {
     return this.hsptModel;
   }
 
