@@ -1,1 +1,117 @@
-<p>hsptaddress works!</p>
+<div class="row">
+  <div class="col-8">
+    <div class="mb-3">
+      <label for="txtAddress" class="form-label"> Address </label>
+      <textarea class="form-control" id="txtAddress" rows="3"></textarea>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="txtAddressCity" class="form-label">
+        City<span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressCity"
+        [(ngModel)]="hsptAddressModel.City"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="ddlAddressCountry" class="form-label">
+        Country<span class="text-danger">*</span>
+      </label>
+      <select class="form-control" id="ddlAddressCountry">
+        <option value="0">Select Country</option>
+        <option *ngFor="let country of countryList" value="{{ country.pk }}">
+          {{ country.displayText }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="ddlAddressState" class="form-label">
+        State<span class="text-danger">*</span>
+      </label>
+      <select
+        class="form-control"
+        id="ddlAddressState"
+        [(ngModel)]="hsptAddressModel.State"
+      >
+        <option value="">Select state</option>
+        <option value="35">Andaman &amp; Nicobar Islands</option>
+        <option value="28">Andhra Pradesh</option>
+        <option value="12">Arunachal Pradesh</option>
+        <option value="18">Assam</option>
+        <option value="10">Bihar</option>
+        <option value="4">Chandigarh</option>
+        <option value="22">Chhatisgarh</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPinCode" class="form-label">
+        PinCode<span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPinCode"
+        [(ngModel)]="hsptAddressModel.PinCode"
+      />
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="txtAddressLandMark" class="form-label"> LandMark </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressLandMark"
+        [(ngModel)]="hsptAddressModel.LandMark"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPhone1" class="form-label"> Phone1 </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPhone1"
+        [(ngModel)]="hsptAddressModel.Phone1"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPhone2" class="form-label"> Phone2 </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPhone2"
+        [(ngModel)]="hsptAddressModel.Phone2"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressFax" class="form-label"> Fax </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressFax"
+        [(ngModel)]="hsptAddressModel.Fax"
+      />
+    </div>
+  </div>
+</div>
