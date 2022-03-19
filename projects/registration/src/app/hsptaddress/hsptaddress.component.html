@@ -7,19 +7,6 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-3">
-    <div class="mb-3">
-      <label for="txtAddressCity" class="form-label">
-        City<span class="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        class="form-control"
-        id="txtAddressCity"
-        [(ngModel)]="hsptAddressModel.City"
-      />
-    </div>
-  </div>
   <div class="col-2">
     <div class="mb-3">
       <label for="ddlAddressCountry" class="form-label">
@@ -52,6 +39,38 @@
         <option value="4">Chandigarh</option>
         <option value="22">Chhatisgarh</option>
       </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="txtAddressDistrict" class="form-label">
+        District<span class="text-danger">*</span>
+      </label>
+      <select
+        class="form-control"
+        id="ddlAddressDistrict"
+        [(ngModel)]="hsptAddressModel.District"
+      >
+        <option value="">Select District</option>
+        <option value="1">Agra</option>
+        <option value="2">Gautam Budh Nagar</option>
+        <option value="3">Ghaziabad</option>
+        <option value="4">Aligarh</option>
+        <option value="5">Sambhal</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="txtAddressCity" class="form-label">
+        City<span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressCity"
+        [(ngModel)]="hsptAddressModel.City"
+      />
     </div>
   </div>
 </div>

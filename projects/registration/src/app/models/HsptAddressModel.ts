@@ -1,5 +1,6 @@
 export class HsptAddressModel {
   public City: string = '';
+  public District: string = '';
   public State: string = '';
   public Country: string = '';
   public Address: string = '';

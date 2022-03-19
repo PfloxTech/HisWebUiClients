@@ -5,6 +5,7 @@ import { HsptregisterService } from '../services/hsptregister.service';
 import { HsptAddressModel } from '../models/HsptAddressModel';
 import { CountryModel } from '../models/CountryModel';
 import { StateModel } from '../models/StateModel';
+import { DistrictModel } from '../models/DistrictModel';
 
 @Component({
   selector: 'app-hsptaddress',
@@ -14,6 +15,7 @@ import { StateModel } from '../models/StateModel';
 export class HsptaddressComponent implements OnInit {
   countryList: Array<CountryModel> = new Array<CountryModel>();
   stateList: Array<StateModel> = new Array<StateModel>();
+  districtList: Array<DistrictModel> = new Array<DistrictModel>();
   @Input() hsptAddressModel: HsptAddressModel = new HsptAddressModel();
 
   constructor(

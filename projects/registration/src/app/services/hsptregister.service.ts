@@ -36,6 +36,12 @@ export class HsptregisterService {
       `${this.config.baseUrl}api/Registration/getStates`
     );
   }
+
+  getDistrict() {
+    return this.httpClient.get(
+      `${this.config.baseUrl}api/Registration/getDistricts`
+    );
+  }
   //
 
   setRegisterModel(_hsptModel: HsptModel) {
