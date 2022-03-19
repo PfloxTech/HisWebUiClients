@@ -1,93 +1,125 @@
 <div class="row bg-primary text-white">
-    <div class="col-12 text-center">
-        <h6 class="mt-2 mb-2">
-            Hospital Registration
-        </h6>
-    </div>
+  <div class="col-12 text-center">
+    <h6 class="mt-2 mb-2">Hospital Registration</h6>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
-            <div>
-                <app-hsptgeneralinfo [hsptModel]="hospitalModel"></app-hsptgeneralinfo>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
+      <div>
+        <app-hsptgeneralinfo [hsptModel]="hospitalModel"></app-hsptgeneralinfo>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Contacts</legend>
-            <div>
-                <app-hsptcontact [hsptContactModel]="hospitalModel.HsptContact"></app-hsptcontact>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Address</legend>
+      <div>
+        <app-hsptaddress
+          [hsptAddressModel]="hospitalModel.HsptAddress"
+        ></app-hsptaddress>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Miscellaneous</legend>
-            <div>
-               <app-hsptmiscellaneous [hsptMiscellaneousModel]="hospitalModel.HsptMiscellaneous"></app-hsptmiscellaneous>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Contacts</legend>
+      <div>
+        <app-hsptcontact
+          [hsptContactModel]="hospitalModel.HsptContact"
+        ></app-hsptcontact>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Provider</legend>
-            <div>
-                <app-hsptprovider [HsptProvider]="hospitalModel.HsptProviders"></app-hsptprovider>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Miscellaneous</legend>
+      <div>
+        <app-hsptmiscellaneous
+          [hsptMiscellaneousModel]="hospitalModel.HsptMiscellaneous"
+        ></app-hsptmiscellaneous>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Feciality</legend>
-            <div>
-                <app-hsptfacility [HsptFacilities]="hospitalModel.HsptFacilities"></app-hsptfacility>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Provider</legend>
+      <div>
+        <app-hsptprovider
+          [HsptProvider]="hospitalModel.HsptProviders"
+        ></app-hsptprovider>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Speciality</legend>
-            <div>
-                <app-hsptspeciality [HsptSpecialities]="hospitalModel.HsptSpecialities"></app-hsptspeciality>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Feciality</legend>
+      <div>
+        <app-hsptfacility
+          [HsptFacilities]="hospitalModel.HsptFacilities"
+        ></app-hsptfacility>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Insurance</legend>
-            <div>
-                <app-hsptinsurance [HsptInsurances]="hospitalModel.HsptInsurances"></app-hsptinsurance>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Speciality</legend>
+      <div>
+        <app-hsptspeciality
+          [HsptSpecialities]="hospitalModel.HsptSpecialities"
+        ></app-hsptspeciality>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2">
-    <div class="col-12">
-        <fieldset class="border rounded-3 p-3 border-primary">
-            <legend class="float-none w-auto px-3">Hospital Ayush</legend>
-            <div>
-                <app-hsptayush [hsptAyushModel]="hospitalModel.HsptAyush"></app-hsptayush>
-            </div>
-        </fieldset>
-    </div>
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Insurance</legend>
+      <div>
+        <app-hsptinsurance
+          [HsptInsurances]="hospitalModel.HsptInsurances"
+        ></app-hsptinsurance>
+      </div>
+    </fieldset>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-12">
+    <fieldset class="border rounded-3 p-3 border-primary">
+      <legend class="float-none w-auto px-3">Hospital Ayush</legend>
+      <div>
+        <app-hsptayush
+          [hsptAyushModel]="hospitalModel.HsptAyush"
+        ></app-hsptayush>
+      </div>
+    </fieldset>
+  </div>
 </div>
 <div class="row mt-2 mb-2">
-    <div class="col-12">
-        <button type="button" class="btn btn-primary btn-right mr-2 ms-2" (click)="next()">Next</button>
-        <button type="button" class="btn btn-primary btn-right" (click)="back()">Back</button>
-    </div>
+  <div class="col-12">
+    <button
+      type="button"
+      class="btn btn-primary btn-right mr-2 ms-2"
+      (click)="next()"
+    >
+      Next
+    </button>
+    <button type="button" class="btn btn-primary btn-right" (click)="back()">
+      Back
+    </button>
+  </div>
 </div>
