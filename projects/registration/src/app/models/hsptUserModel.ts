@@ -4,7 +4,7 @@ export class HsptUserModel {
     LastName: string = '';
     EmailId: string = ''
     Phone: string = '';
-    LogonId: string = '';
+    LoginId: string = '';
     Password: string = '';
     ConfirmPassword: string = ''
 }

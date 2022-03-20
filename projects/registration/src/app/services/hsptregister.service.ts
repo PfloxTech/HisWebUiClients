@@ -29,4 +29,8 @@ export class HsptregisterService {
   getRegisterModel(): HsptModel {
     return this.hsptModel;
   }
+
+  getHospital(hospitalPk: number): Observable<HsptModel> {
+    return this.httpClient.get<HsptModel>(`${this.config.baseUrl}api/Registration/GetHospital/${hospitalPk}`);
+  }
 }

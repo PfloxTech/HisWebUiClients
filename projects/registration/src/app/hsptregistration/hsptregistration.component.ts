@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HsptModel } from '../models/hsptmodel';
 import { HsptregisterService } from '../services/hsptregister.service';
 
@@ -10,8 +10,8 @@ import { HsptregisterService } from '../services/hsptregister.service';
 })
 export class HsptregistrationComponent implements OnInit {
   hospitalModel: HsptModel = new HsptModel();
-
-  constructor(private router: Router, private hsptRgisterService: HsptregisterService) {
+  priceModelId: string = '';
+  constructor(private router: Router, private route: ActivatedRoute, private hsptRgisterService: HsptregisterService) {
 
   }
 
@@ -20,6 +20,8 @@ export class HsptregistrationComponent implements OnInit {
 
   next(): void {
     this.hsptRgisterService.setRegisterModel(this.hospitalModel);
+    this.priceModelId = this.route.snapshot.paramMap.get("priceModelId")!;
+    this.hospitalModel.BillingFk = parseInt(this.priceModelId);
     this.router.navigate(["hospital-user"]);
   }
 

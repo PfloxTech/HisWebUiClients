@@ -17,8 +17,8 @@ export class HsptpricemodelcardComponent implements OnInit {
     this.registerService.getBilling().subscribe(data => { this.priceList = data });
   }
 
-  priceModel(modelId: number): void {
-    this.router.navigate(["hospital-registration"]);
+  priceModel(priceModelId: number): void {
+    this.router.navigate(["hospital-registration", priceModelId]);
   }
 
 }
