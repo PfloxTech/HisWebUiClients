@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { FetaureModel } from '../models/FeatureModel';
+import { PostFeatureModel } from '../models/PostFeatureModel';
 
 @Component({
   selector: 'app-hsptprovider',
@@ -12,7 +13,7 @@ export class HsptproviderComponent implements OnInit {
   constructor() { }
 
   @Input()
-  HsptProvider: Array<FetaureModel> = new Array<FetaureModel>();
+  HsptProvider: Array<PostFeatureModel> = new Array<PostFeatureModel>();
 
   ngOnInit(): void {
   }

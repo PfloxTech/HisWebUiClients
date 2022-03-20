@@ -29,5 +29,4 @@ export class HsptregisterService {
   getRegisterModel(): HsptModel {
     return this.hsptModel;
   }
-
 }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { HsptUserModel } from '../models/hsptUserModel';
 import { HsptregisterService } from '../services/hsptregister.service';
 import { HsptModel } from '../models/hsptmodel';
+import { HsptContactModel } from '../models/hsptcontactmodel';
+import { HsptMiscellaneousModel } from '../models/HsptMiscellaneousModel';
 
 @Component({
   selector: 'app-hsptuserdetail',
@@ -26,6 +28,10 @@ export class HsptuserdetailComponent implements OnInit {
   next(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
     this.hsptModel.HsptUser = this.UserModel;
+    this.hsptModel.HsptContacts=new Array<HsptContactModel>();
+    this.hsptModel.HsptContacts.push(this.hsptModel.HsptContact);
+    this.hsptModel.HsptMiscellaneousList=new Array<HsptMiscellaneousModel>();
+    this.hsptModel.HsptMiscellaneousList.push(this.hsptModel.HsptMiscellaneous);
     this.hsptRgisterService.register(this.hsptModel).subscribe(data => {
     });
     this.router.navigate(["hospital-welcome"]);

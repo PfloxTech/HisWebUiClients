@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { FetaureModel } from '../models/FeatureModel';
+import { PostFeatureModel } from '../models/PostFeatureModel';
 
 @Component({
   selector: 'app-hsptinsurance',
@@ -10,7 +11,7 @@ import { FetaureModel } from '../models/FeatureModel';
 export class HsptinsuranceComponent implements OnInit {
   methodName = "GetInsurance";
   @Input()
-  HsptInsurances: Array<FetaureModel> = new Array<FetaureModel>();
+  HsptInsurances: Array<PostFeatureModel> = new Array<PostFeatureModel>();
 
   constructor() { }
 

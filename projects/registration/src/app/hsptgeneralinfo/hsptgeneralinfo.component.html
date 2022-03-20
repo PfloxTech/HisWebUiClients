@@ -4,51 +4,51 @@
             <label for="txtHsptName" class="form-label">
                 Hospital Name<span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="txtHsptName" [(ngModel)]="hsptModel.HospitalName" />
+            <input type="text" class="form-control" id="txtHsptName" [(ngModel)]="hsptModel.Name" />
         </div>
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="txtHsptName" class="form-label">
+            <label for="txtHsptRegNum" class="form-label">
                 Hospital Registration Number
                 <span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptRegNum" [(ngModel)]="hsptModel.RegisterNum" />
         </div>
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="txtHsptName" class="form-label">
+            <label for="txtHsptRegDate" class="form-label">
                 Hospital Registration Date
                 <span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptRegDate" [(ngModel)]="hsptModel.RegisterDate" />
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-3">
         <div class="mb-3">
-            <label for="txtHsptName" class="form-label">
+            <label for="txtHsptWebSite" class="form-label">
                 Hospital WebSite
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptWebSite" [(ngModel)]="hsptModel.Website" />
         </div>
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="txtHsptName" class="form-label">
+            <label for="txtHsptPan" class="form-label">
                 Hospital PAN
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptPan" [(ngModel)]="hsptModel.PanNum" />
         </div>
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="txtHsptName" class="form-label">
+            <label for="txtHsptGstNum" class="form-label">
                 Hospital GST
             </label>
-            <input type="text" class="form-control" id="txtHsptName" />
+            <input type="text" class="form-control" id="txtHsptGstNum" [(ngModel)]="hsptModel.GstNum" />
         </div>
     </div>
 </div>
@@ -59,7 +59,7 @@
                 Accreditation <i>(For e.g NABH/NABL/JCI/ISO/Others) (For Hospital/Blood Bank/
                     Laboratory)</i>
             </label>
-            <textarea class="form-control" id="txtAccreditation" rows="3"></textarea>
+            <textarea class="form-control" id="txtAccreditation" rows="3" [(ngModel)]="hsptModel.Accreditation"></textarea>
         </div>
     </div>
 </div>
