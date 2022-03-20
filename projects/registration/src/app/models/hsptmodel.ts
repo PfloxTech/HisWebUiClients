@@ -9,6 +9,7 @@ export class HsptModel {
     Name: string = '';
     name: string = '';
     SysRegisterNum: string = ''
+    sysRegisterNum: string = ''
     RegisterNum: string = ''
     RegisterDate: Date = new Date();
     RegisterRenewal: Date = new Date();
@@ -23,6 +24,7 @@ export class HsptModel {
     HsptContacts: Array<HsptContactModel> = new Array<HsptContactModel>();
     HsptUser: HsptUserModel = new HsptUserModel();
     HsptUsers: Array<HsptUserModel> = new Array<HsptUserModel>();
+    hsptUsers: Array<HsptUserModel> = new Array<HsptUserModel>();
     HsptMiscellaneous: HsptMiscellaneousModel = new HsptMiscellaneousModel();
     HsptMiscellaneousList: Array<HsptMiscellaneousModel> = new Array<HsptMiscellaneousModel>();
     HsptProviders: Array<PostFeatureModel> = new Array<PostFeatureModel>();

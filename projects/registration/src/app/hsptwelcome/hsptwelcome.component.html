@@ -1,6 +1,25 @@
 <div class="row">
-    <div class="col-12 bg-image override-padding">
-        <span class="badge rounded-pill bg-primary pill-right">Login</span>
-        <span class="badge rounded-pill bg-primary pill-right"> Hospital Name :{{hsptModel.name}}</span>
+    <div class="col-12 bg-image override-padding text-center">
+        <div class="row">
+            <div class="col-12">
+                <span class="badge rounded-pill bg-primary pill-right">Login</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 opacity-75">
+                <div class="card mt-2 ms-2 shadow-lg p-3 mb-5 bg-body rounded">
+                    <img src="" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{hsptModel.name}}</h5>
+                        <p class="card-text">The registeration has been done.The registeration has been done.The registeration has been done.</p>
+                        <p>Hospital Name :{{hsptModel.name}}</p>
+                        <p>User Name :{{hsptModel.hsptUsers[0].firstName}}</p>
+                        <p>User Id :{{hsptModel.hsptUsers[0].loginId}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
