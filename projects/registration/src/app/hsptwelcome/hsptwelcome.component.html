@@ -9,13 +9,17 @@
             <div class="col-4"></div>
             <div class="col-4 opacity-75">
                 <div class="card mt-2 ms-2 shadow-lg p-3 mb-5 bg-body rounded">
-                    <img src="" class="card-img-top mt-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{hsptModel.name}}</h5>
-                        <p class="card-text">The registeration has been done.The registeration has been done.The registeration has been done.</p>
-                        <p>Hospital Name :{{hsptModel.name}}</p>
-                        <p>User Name :{{hsptModel.hsptUsers[0].firstName}}</p>
-                        <p>User Id :{{hsptModel.hsptUsers[0].loginId}}</p>
+                        <p class="card-text">Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}}</strong> to register
+                            <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been completed
+                            for
+                            <strong>{{hsptModel.name}}</strong> with hospital primary login
+                            id is <strong>{{hsptModel.hsptUsers[0].loginId}}</strong>.
+                        </p>
+                        <p class="card-text">
+                            Login here.The email has been send on your register email id <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
+                        </p>
                     </div>
                 </div>
             </div>

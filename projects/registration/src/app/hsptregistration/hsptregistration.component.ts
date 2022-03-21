@@ -21,7 +21,7 @@ export class HsptregistrationComponent implements OnInit {
   next(): void {
     this.hsptRgisterService.setRegisterModel(this.hospitalModel);
     this.priceModelId = this.route.snapshot.paramMap.get("priceModelId")!;
-    this.hospitalModel.BillingFk = parseInt(this.priceModelId);
+    this.hospitalModel.billingFk = parseInt(this.priceModelId);
     this.router.navigate(["hospital-user"]);
   }
 

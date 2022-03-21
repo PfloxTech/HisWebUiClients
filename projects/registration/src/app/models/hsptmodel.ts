@@ -5,31 +5,28 @@ import { FetaureModel } from "./FeatureModel";
 import { PostFeatureModel } from "./PostFeatureModel";
 
 export class HsptModel {
-    Pk: number = 0;
-    Name: string = '';
+    pk: number = 0;
     name: string = '';
-    SysRegisterNum: string = ''
     sysRegisterNum: string = ''
-    RegisterNum: string = ''
-    RegisterDate: Date = new Date();
-    RegisterRenewal: Date = new Date();
-    PanNum: string = ''
-    GstNum: string = ''
-    Website: string = ''
-    Accreditation: string = ''
-    ReminderDate: Date = new Date();
-    DigitalSignature: string = ''
-    BillingFk: number = 0;
-    HsptContact: HsptContactModel = new HsptContactModel();
-    HsptContacts: Array<HsptContactModel> = new Array<HsptContactModel>();
-    HsptUser: HsptUserModel = new HsptUserModel();
-    HsptUsers: Array<HsptUserModel> = new Array<HsptUserModel>();
+    registerNum: string = ''
+    registerDate: Date = new Date();
+    registerRenewal: Date = new Date();
+    panNum: string = ''
+    gstNum: string = ''
+    website: string = ''
+    accreditation: string = ''
+    reminderDate: Date = new Date();
+    digitalSignature: string = ''
+    billingFk: number = 0;
+    hsptContact: HsptContactModel = new HsptContactModel();
+    hsptContacts: Array<HsptContactModel> = new Array<HsptContactModel>();
+    hsptUser: HsptUserModel = new HsptUserModel();
     hsptUsers: Array<HsptUserModel> = new Array<HsptUserModel>();
-    HsptMiscellaneous: HsptMiscellaneousModel = new HsptMiscellaneousModel();
-    HsptMiscellaneousList: Array<HsptMiscellaneousModel> = new Array<HsptMiscellaneousModel>();
-    HsptProviders: Array<PostFeatureModel> = new Array<PostFeatureModel>();
-    HsptFacilities: Array<PostFeatureModel> = new Array<PostFeatureModel>();
-    HsptSpecialities: Array<PostFeatureModel> = new Array<PostFeatureModel>();
-    HsptInsurances: Array<PostFeatureModel> = new Array<PostFeatureModel>();
-    HsptAyush: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+    hsptMiscellaneous: HsptMiscellaneousModel = new HsptMiscellaneousModel();
+    hsptMiscellaneousList: Array<HsptMiscellaneousModel> = new Array<HsptMiscellaneousModel>();
+    hsptProviders: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+    hsptFacilities: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+    hsptSpecialities: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+    hsptInsurances: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+    hsptAyush: Array<PostFeatureModel> = new Array<PostFeatureModel>();
 }

@@ -1,12 +1,10 @@
 export class HsptUserModel {
-    FirstName: string = '';
     firstName: string = '';
-    MiddleName: string = '';
-    LastName: string = '';
-    EmailId: string = ''
-    Phone: string = '';
-    LoginId: string = '';
+    middleName: string = '';
+    lastName: string = '';
+    emailId: string = ''
+    phone: string = '';
     loginId: string = '';
-    Password: string = '';
-    ConfirmPassword: string = ''
+    password: string = '';
+    confirmPassword: string = ''
 }

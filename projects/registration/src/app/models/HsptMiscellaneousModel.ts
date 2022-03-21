@@ -1,15 +1,15 @@
 export class HsptMiscellaneousModel {
-    public DoctorsCount: number = 0;
-    public BedCount: number = 0;
-    public PrivateWardCount: number = 0;
-    public MedicalConsultantCount: number = 0;
-    public EWSBedCount: number = 0;
-    public Other: string = '';
-    public EmergencyService: boolean = false;
-    public TariffRange: string = '';
-    public Collaboration: string = '';
-    public AnimalBiteCare: boolean = false;
-    public PoisoningCentreCure: boolean = false;
-    public RabiesPreventionAndCareDrug: boolean = false;
-    public DeAddiction: boolean = false;
+    public doctorsCount: number = 0;
+    public bedCount: number = 0;
+    public privateWardCount: number = 0;
+    public medicalConsultantCount: number = 0;
+    public ewsBedCount: number = 0;
+    public other: string = '';
+    public emergencyService: boolean = false;
+    public tariffRange: string = '';
+    public collaboration: string = '';
+    public animalBiteCare: boolean = false;
+    public poisoningCentreCure: boolean = false;
+    public rabiesPreventionAndCareDrug: boolean = false;
+    public deAddiction: boolean = false;
 }

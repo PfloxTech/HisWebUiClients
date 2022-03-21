@@ -15,7 +15,7 @@
                         <label for="txtFirstName" class="form-label">
                             First Name<span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtFirstName" [(ngModel)]="UserModel.FirstName" />
+                        <input type="text" class="form-control" id="txtFirstName" [(ngModel)]="UserModel.firstName" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -23,7 +23,7 @@
                         <label for="txtMiddleName" class="form-label">
                             Middle Name
                         </label>
-                        <input type="text" class="form-control" id="txtMidleName" [(ngModel)]="UserModel.MiddleName" />
+                        <input type="text" class="form-control" id="txtMidleName" [(ngModel)]="UserModel.middleName" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -32,7 +32,7 @@
                             Last Name
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtLastName" [(ngModel)]="UserModel.LastName" />
+                        <input type="text" class="form-control" id="txtLastName" [(ngModel)]="UserModel.lastName" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -41,7 +41,7 @@
                             EmailId
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtEmailId" [(ngModel)]="UserModel.EmailId" />
+                        <input type="text" class="form-control" id="txtEmailId" [(ngModel)]="UserModel.emailId" />
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                             Phone
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="txtPhone" [(ngModel)]="UserModel.Phone" />
+                        <input type="text" class="form-control" id="txtPhone" [(ngModel)]="UserModel.phone" />
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="spanLogonId"><img src="../../assets/img/man.png" /></span>
                         <input type="text" class="form-control" id="txtLogonId" aria-describedby="basic-addon2"
-                            [(ngModel)]="UserModel.LoginId" />
+                            [(ngModel)]="UserModel.loginId" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -89,7 +89,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
-                        <input type="password" class="form-control" id="txtPassword" [(ngModel)]="UserModel.Password" />
+                        <input type="password" class="form-control" id="txtPassword" [(ngModel)]="UserModel.password" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -100,7 +100,7 @@
                         <span class="input-group-text" id="basic-addon2"><img
                                 src="../../assets/img/password.png" /></span>
                         <input type="password" class="form-control" id="txtConFirmPassword"
-                            [(ngModel)]="UserModel.ConfirmPassword" />
+                            [(ngModel)]="UserModel.confirmPassword" />
                     </div>
                 </div>
                 <div class="col-3">
