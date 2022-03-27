@@ -1,4 +1,4 @@
-<div [formGroup]="userDetailsForm" (ngSubmit)="next()">
+<div [formGroup]="userDetailsForm">
     <div class="row bg-primary text-white">
         <div class="col-12 text-center">
             <h6 class="mt-2 mb-2">
@@ -24,15 +24,13 @@
                             <label for="txtMiddleName" class="form-label">
                                 Middle Name
                             </label>
-                            <input type="text" class="form-control" id="txtMidleName"
-                                [(ngModel)]="UserModel.middleName" />
+                            <input type="text" class="form-control" id="txtMidleName" formControlName="middleName" />
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <label for="txtLastName" class="form-label">
                                 Last Name
-                                <span class="text-danger">*</span>
                             </label>
                             <input type="text" class="form-control" id="txtLastName" formControlName="lastName" />
                         </div>
@@ -40,45 +38,43 @@
                     <div class="col-3">
                         <div class="mb-3">
                             <label for="txtPhone" class="form-label">
-                                Phone
-                                <span class="text-danger">*</span>
+                                Mobile No
                             </label>
-                            <input type="text" class="form-control" id="txtPhone" [(ngModel)]="UserModel.phone" />
+                            <input type="text" class="form-control" id="txtPhone" formControlName="phone" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtLogonId" class="form-label">
                             User Id(Email Id\Mobile No\User Name)<span class="text-danger">*</span>
                         </label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="spanLogonId"><img
                                     src="../../assets/img/man.png" /></span>
                             <input type="text" class="form-control" id="txtLogonId" aria-describedby="basic-addon2"
-                                [(ngModel)]="UserModel.loginId" />
+                                formControlName="loginId" />
                         </div>
                     </div>
                     <div class="col-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtPassword" class="form-label">
                             Password<span class="text-danger">*</span>
                         </label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon2"><img
-                                    src="../../assets/img/password.png" /></span>
-                            <input type="password" class="form-control" id="txtPassword"
-                                [(ngModel)]="UserModel.password" />
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">
+                                <img src="../../assets/img/password.png" />
+                            </span>
+                            <input type="password" class="form-control" id="txtPassword" formControlName="password" />
                         </div>
                     </div>
                     <div class="col-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtConFirmPassword" class="form-label">
                             Confirm Password<span class="text-danger">*</span>
                         </label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon2"><img
-                                    src="../../assets/img/password.png" /></span>
+                            <span class="input-group-text"><img src="../../assets/img/password.png" /></span>
                             <input type="password" class="form-control" id="txtConFirmPassword"
-                                [(ngModel)]="UserModel.confirmPassword" />
+                                formControlName="confirmPassword" />
                         </div>
                     </div>
                 </div>
@@ -93,17 +89,36 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <label for="txtHsptName" class="form-label">
+                        <label for="txtOtp" class="form-label">
                             OTP on Email<span class="text-danger">*</span>
                         </label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon2"><img
                                     src="../../assets/img/security.png" /></span>
-                            <input type="password" class="form-control" id="txtHsptName" />
+                            <input type="password" class="form-control" id="txtOtp" formControlName="otp" />
                         </div>
                     </div>
                 </div>
             </fieldset>
+        </div>
+    </div>
+
+    <div class="error position-absolute top-50 start-0 end-0" *ngIf="errorsList.length>0">
+        <div class="row alert alert-danger d-flex align-items-center" role="alert">
+            <div class="col-12">
+                <h6 class="alert-heading">
+                    Errors
+                    <strong class="btn-right pe-auto" style="cursor:pointer !important" title="Close"
+                        (click)="close()">x</strong>
+                </h6>
+            </div>
+            <div class="col-12">
+                <ul>
+                    <li *ngFor="let error of errorsList">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="row mt-2">
