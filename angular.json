@@ -53,6 +53,7 @@
               "projects/registration/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/registration/src/assets/css/bootstrap-override.less",
               "projects/registration/src/assets/css/styles.less"
@@ -125,6 +126,7 @@
               "projects/registration/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/registration/src/assets/css/bootstrap-override.less",
               "projects/registration/src/assets/css/styles.less"

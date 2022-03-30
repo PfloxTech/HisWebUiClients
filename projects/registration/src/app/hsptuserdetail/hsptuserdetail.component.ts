@@ -6,8 +6,10 @@ import { HsptModel } from '../models/hsptmodel';
 import { HsptContactModel } from '../models/hsptcontactmodel';
 import { HsptMiscellaneousModel } from '../models/HsptMiscellaneousModel';
 import { CustomValidator } from '../validaters/CustomValidator';
-import { FormBuilder } from '@angular/forms';
-import { AbstractControlOptions } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ValidationService } from '../validaters/validation.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastmessageComponent } from '../shared/toastmessage/toastmessage.component';
 
 @Component({
   selector: 'app-hsptuserdetail',
@@ -19,8 +21,8 @@ export class HsptuserdetailComponent implements OnInit {
   hsptModel: HsptModel = new HsptModel();
   UserModel: HsptUserModel = new HsptUserModel();
   errorsList: Array<string> = new Array<string>();
-  userDetailsForm = this.fb.group({
-    firstName: [this.UserModel.firstName, CustomValidator.Required],
+  userDetailsForm:FormGroup = this.fb.group({
+    firstName: [null, CustomValidator.Required],
     lastName: [null],
     middleName: [null],
     emailId: [null, [CustomValidator.Required, CustomValidator.Email]],
@@ -30,9 +32,8 @@ export class HsptuserdetailComponent implements OnInit {
     confirmPassword: [null, { validators: [CustomValidator.Required, CustomValidator.Password] }],
     otp: [null, [CustomValidator.Required]],
   }, { validators: CustomValidator.PasswordMatch, updateOn: "blur" });
-
   constructor(private router: Router, private hsptRgisterService: HsptregisterService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder, private snakBar: MatSnackBar, private validationService: ValidationService) { }
 
   ngOnInit(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
@@ -45,30 +46,14 @@ export class HsptuserdetailComponent implements OnInit {
 
 
   next(): void {
-    this.UserModel = this.userDetailsForm.value;
-    this.errorsList = new Array<string>();
+    
     if (!this.userDetailsForm.valid) {
-      Object.keys(this.userDetailsForm.controls).forEach(ctrlKey => {
-        var ctrl = this.userDetailsForm.controls[ctrlKey];
-        var errors: any = ctrl.errors;
-        if (errors) {
-          Object.keys(errors).forEach(errrorKey => {
-            if(this.errorsList.indexOf(errors[errrorKey])<0){
-            this.errorsList.push(errors[errrorKey]);
-            }
-          });
-        }
-      });
-
-      var error: any = this.userDetailsForm.errors;
-      Object.keys(error).forEach(er => {
-        var frmEr = error[er];
-        this.errorsList.push(frmEr);
-      });
-
+      this.errorsList = this.validationService.getErrors(this.userDetailsForm);
+      this.snakBar.openFromComponent(ToastmessageComponent, { duration: 5 * 1000, data: this.errorsList, panelClass: "snackbar", verticalPosition: "top" });
       return;
     }
 
+    this.UserModel = this.userDetailsForm.value;
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
     this.hsptModel.hsptUsers = new Array<HsptUserModel>();
     this.hsptModel.hsptUsers.push(this.UserModel);

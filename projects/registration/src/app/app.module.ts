@@ -23,6 +23,11 @@ import { HsptcarouselComponent } from './hsptcarousel/hsptcarousel.component';
 import { HspthomeComponent } from './hspthome/hspthome.component';
 import { HsptuserdetailComponent } from './hsptuserdetail/hsptuserdetail.component';
 import { HsptwelcomeComponent } from './hsptwelcome/hsptwelcome.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ToastmessageComponent } from './shared/toastmessage/toastmessage.component';
 
 function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => Promise<boolean> {
   return (): Promise<boolean> => {
@@ -53,14 +58,19 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
     HsptcarouselComponent,
     HspthomeComponent,
     HsptuserdetailComponent,
-    HsptwelcomeComponent
+    HsptwelcomeComponent,
+    ToastmessageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
     {
@@ -71,7 +81,8 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
         AppConfig
       ],
       multi: true
-    }],
+    },
+    MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
