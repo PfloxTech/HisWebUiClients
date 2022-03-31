@@ -16,13 +16,20 @@
             <input type="text" class="form-control" id="txtHsptRegNum" [(ngModel)]="hsptModel.registerNum" />
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-2">
         <div class="mb-3">
             <label for="txtHsptRegDate" class="form-label">
                 Hospital Registration Date
                 <span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="txtHsptRegDate" [(ngModel)]="hsptModel.registerDate" />
+            <div class="input-group">
+                <input type="text" class="form-control" id="txtHsptRegDate" [(ngModel)]="hsptModel.registerDate"
+                    matInput [matDatepicker]="picker">
+                <span class="input-group-text">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </span>
+            </div>
         </div>
     </div>
 </div>
@@ -59,7 +66,8 @@
                 Accreditation <i>(For e.g NABH/NABL/JCI/ISO/Others) (For Hospital/Blood Bank/
                     Laboratory)</i>
             </label>
-            <textarea class="form-control" id="txtAccreditation" rows="3" [(ngModel)]="hsptModel.accreditation"></textarea>
+            <textarea class="form-control" id="txtAccreditation" rows="3"
+                [(ngModel)]="hsptModel.accreditation"></textarea>
         </div>
     </div>
 </div>
