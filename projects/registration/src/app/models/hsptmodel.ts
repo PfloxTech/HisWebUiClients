@@ -9,8 +9,8 @@ export class HsptModel {
     name: string = '';
     sysRegisterNum: string = ''
     registerNum: string = ''
-    registerDate: Date = new Date();
-    registerRenewal: Date = new Date();
+    registerDate: Date = null!;
+    registerRenewal: Date = null!;
     panNum: string = ''
     gstNum: string = ''
     website: string = ''

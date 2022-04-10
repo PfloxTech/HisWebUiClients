@@ -21,7 +21,7 @@ export class HsptuserdetailComponent implements OnInit {
   hsptModel: HsptModel = new HsptModel();
   UserModel: HsptUserModel = new HsptUserModel();
   errorsList: Array<string> = new Array<string>();
-  userDetailsForm:FormGroup = this.fb.group({
+  userDetailsForm: FormGroup = this.fb.group({
     firstName: [null, CustomValidator.Required],
     lastName: [null],
     middleName: [null],
@@ -46,10 +46,10 @@ export class HsptuserdetailComponent implements OnInit {
 
 
   next(): void {
-    
-    if (!this.userDetailsForm.valid) {
-      this.errorsList = this.validationService.getErrors(this.userDetailsForm);
-      this.snakBar.openFromComponent(ToastmessageComponent, { duration: 5 * 1000, data: this.errorsList, panelClass: "snackbar", verticalPosition: "top" });
+
+    var frmValidation = this.validationService.validateForm(this.userDetailsForm);
+    if (!frmValidation.IsValid) {
+      this.snakBar.openFromComponent(ToastmessageComponent, { duration: 5 * 1000, data: frmValidation.Erroos, panelClass: "snackbar", verticalPosition: "top" });
       return;
     }
 
@@ -62,8 +62,8 @@ export class HsptuserdetailComponent implements OnInit {
     this.hsptModel.hsptMiscellaneousList = new Array<HsptMiscellaneousModel>();
     this.hsptModel.hsptMiscellaneousList.push(this.hsptModel.hsptMiscellaneous);
     this.hsptRgisterService.register(this.hsptModel).subscribe(data => {
-      var hospitalPk = data;
-      this.router.navigate(["hospital-welcome", hospitalPk]);
+      var hsptSysRegNum = data;
+      this.router.navigate(["hospital-welcome", hsptSysRegNum]);
     });
   }
 

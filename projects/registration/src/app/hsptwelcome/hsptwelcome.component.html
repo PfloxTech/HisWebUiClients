@@ -11,14 +11,13 @@
                 <div class="card mt-2 ms-2 shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="card-body">
                         <h5 class="card-title">{{hsptModel.name}}</h5>
-                        <p class="card-text">Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}}</strong> to register
-                            <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been completed
-                            for
-                            <strong>{{hsptModel.name}}</strong> with hospital primary login
+                        <p class="card-text">Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}} {{hsptModel.hsptUsers[0].lastName}} {{hsptModel.hsptUsers[0].middleName}}</strong> to register
+                            <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been completed.                            
+                            <strong>{{hsptModel.name}}</strong>Hospital primary login
                             id is <strong>{{hsptModel.hsptUsers[0].loginId}}</strong>.
                         </p>
                         <p class="card-text">
-                            Login here.The email has been send on your register email id <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
+                            Login here.The email has been sent on your register email id <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
                         </p>
                     </div>
                 </div>

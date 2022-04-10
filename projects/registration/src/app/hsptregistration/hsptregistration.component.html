@@ -5,12 +5,12 @@
         </h6>
     </div>
 </div>
-<div class="row mt-2">
+<div class="row mt-2" [formGroup]="hsptRegFrm">
     <div class="col-12">
         <fieldset class="border rounded-3 p-3 border-primary">
             <legend class="float-none w-auto px-3">Hospital General Deatils</legend>
             <div>
-                <app-hsptgeneralinfo [hsptModel]="hospitalModel"></app-hsptgeneralinfo>
+                <app-hsptgeneralinfo [hsptModel]="hospitalModel" formGroupName="generalInfo"></app-hsptgeneralinfo>
             </div>
         </fieldset>
     </div>

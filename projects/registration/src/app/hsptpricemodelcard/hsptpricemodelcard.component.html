@@ -4,7 +4,8 @@
             <img src="../assets/img/price-tag.png" class="card-img-top mt-2" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{price.name}}</h5>
-                <p class="card-text">This model is for {{price.monthDuration}} Months.</p>
+                <p class="card-text">The duration for {{price.name}} is {{price.monthDuration}} Months.</p>
+                <p class="card-text" *ngIf="price.price>0">The price for this is {{price.price}}</p>
                 <button type="button" class="btn btn-primary" (click)="priceModel(price.pk)">Continue</button>
                 <p><a href="#" class="card-link">More Details</a></p>
             </div>
