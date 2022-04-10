@@ -5,8 +5,6 @@ import { HsptregisterService } from '../services/hsptregister.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomValidator } from '../validaters/CustomValidator';
 import { ValidationService } from '../validaters/validation.service';
-import { ToastmessageComponent } from '../shared/toastmessage/toastmessage.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hsptregistration',
@@ -19,7 +17,7 @@ export class HsptregistrationComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute,
     private hsptRgisterService: HsptregisterService, private fb: FormBuilder,
-    private validationService: ValidationService, private snakBar: MatSnackBar) {
+    private validationService: ValidationService) {
 
   }
 
@@ -35,8 +33,7 @@ export class HsptregistrationComponent implements OnInit {
 
     var frmValidation = this.validationService.validateForm(this.hsptRegFrm);
     if (!frmValidation.IsValid) {
-      this.snakBar.openFromComponent(ToastmessageComponent, { duration: 5 * 1000, data: frmValidation.Erroos, panelClass: "snackbar", verticalPosition: "top" });
-      return;
+           return;
     }
     this.hsptRgisterService.setRegisterModel(this.hospitalModel);
     this.priceModelId = this.route.snapshot.paramMap.get("priceModelId")!;

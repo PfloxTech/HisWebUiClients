@@ -8,8 +8,6 @@ import { HsptMiscellaneousModel } from '../models/HsptMiscellaneousModel';
 import { CustomValidator } from '../validaters/CustomValidator';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ValidationService } from '../validaters/validation.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { ToastmessageComponent } from '../shared/toastmessage/toastmessage.component';
 
 @Component({
   selector: 'app-hsptuserdetail',
@@ -33,7 +31,7 @@ export class HsptuserdetailComponent implements OnInit {
     otp: [null, [CustomValidator.Required]],
   }, { validators: CustomValidator.PasswordMatch, updateOn: "blur" });
   constructor(private router: Router, private hsptRgisterService: HsptregisterService,
-    private fb: FormBuilder, private snakBar: MatSnackBar, private validationService: ValidationService) { }
+    private fb: FormBuilder, private validationService: ValidationService) { }
 
   ngOnInit(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
@@ -49,8 +47,7 @@ export class HsptuserdetailComponent implements OnInit {
 
     var frmValidation = this.validationService.validateForm(this.userDetailsForm);
     if (!frmValidation.IsValid) {
-      this.snakBar.openFromComponent(ToastmessageComponent, { duration: 5 * 1000, data: frmValidation.Erroos, panelClass: "snackbar", verticalPosition: "top" });
-      return;
+        return;
     }
 
     this.UserModel = this.userDetailsForm.value;
