@@ -24,10 +24,11 @@ import { HspthomeComponent } from './hspthome/hspthome.component';
 import { HsptuserdetailComponent } from './hsptuserdetail/hsptuserdetail.component';
 import { HsptwelcomeComponent } from './hsptwelcome/hsptwelcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastmessageComponent } from './shared/toastmessage/toastmessage.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => Promise<boolean> {
   return (): Promise<boolean> => {
@@ -70,7 +71,8 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [
     {

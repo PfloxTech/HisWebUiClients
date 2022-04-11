@@ -1,6 +1,6 @@
 <div>
-    <div class="row">
-        <div class="col-6" [formGroup]="form">
+    <div class="row" [formGroup]="form">
+        <div class="col-6">
             <div class="mb-3">
                 <label for="txtHsptName" class="form-label">
                     Hospital Name<span class="text-danger">*</span>
@@ -13,7 +13,7 @@
                 <label for="txtHsptRegNum" class="form-label">
                     Hospital Registration Number
                 </label>
-                <input type="text" class="form-control" id="txtHsptRegNum" [(ngModel)]="hsptModel.registerNum" />
+                <input type="text" class="form-control" id="txtHsptRegNum" [(ngModel)]="hsptModel.registerNum" [ngModelOptions]="{standalone: true}" />
             </div>
         </div>
         <div class="col-2">
@@ -22,11 +22,11 @@
                     Hospital Registration Date
                 </label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="txtHsptRegDate" [(ngModel)]="hsptModel.registerDate"
-                        matInput [matDatepicker]="picker">
+                    <input type="text" class="form-control" id="txtHsptRegDate" formControlName="registerDate"
+                        matInput [matDatepicker]="picker" [disabled]=true/>
                     <span class="input-group-text">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-datepicker #picker disabled="false"></mat-datepicker>
                     </span>
                 </div>
             </div>

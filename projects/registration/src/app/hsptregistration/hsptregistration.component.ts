@@ -23,7 +23,10 @@ export class HsptregistrationComponent implements OnInit {
 
   hsptRegFrm = this.fb.group({
     generalInfo: this.fb.group(
-      { name: ['', CustomValidator.Required] })
+      {
+        name: [null, CustomValidator.Required],
+        registerDate: [null, CustomValidator.DateLessThanToday]
+      })
   });
 
   ngOnInit(): void {
@@ -33,8 +36,13 @@ export class HsptregistrationComponent implements OnInit {
 
     var frmValidation = this.validationService.validateForm(this.hsptRegFrm);
     if (!frmValidation.IsValid) {
-           return;
+      return;
     }
+    //assign from form control
+    var generalInfo= this.hsptRegFrm.controls["generalInfo"].value;
+    this.hospitalModel.name = generalInfo.name;
+    this.hospitalModel.registerDate = generalInfo.registerDate;
+
     this.hsptRgisterService.setRegisterModel(this.hospitalModel);
     this.priceModelId = this.route.snapshot.paramMap.get("priceModelId")!;
     this.hospitalModel.billingFk = parseInt(this.priceModelId);

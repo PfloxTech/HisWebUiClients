@@ -36,4 +36,23 @@ export class CustomValidator {
         return error;
     }
 
+    static DateLessThanToday(ctrl: FormControl): ValidationErrors | null {
+        var error: ValidationErrors = { "dateLessThanToday": `Date should be small and eqaul to today date` }
+        try {
+            const dateInput = ctrl.value;
+            if (dateInput != undefined || dateInput != null) {
+                dateInput.setHours(0, 0, 0, 0);
+                const todayDate = new Date().setHours(0, 0, 0, 0);
+                if (dateInput <= todayDate) {
+                    return null;
+                }
+                return error;
+            }
+        }
+        catch (ex) {
+            console.log(ex);
+            return error;
+        }
+        return null;
+    }
 }
