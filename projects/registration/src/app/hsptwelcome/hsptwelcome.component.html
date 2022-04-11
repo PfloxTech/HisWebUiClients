@@ -10,19 +10,25 @@
             <div class="col-4 opacity-75">
                 <div class="card mt-2 ms-2 shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="card-body">
-                        <h5 class="card-title">{{hsptModel.name}}</h5>
-                        <p class="card-text">Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}} {{hsptModel.hsptUsers[0].lastName}} {{hsptModel.hsptUsers[0].middleName}}</strong> to register
-                            <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been completed.                            
-                            <strong>{{hsptModel.name}}</strong>Hospital primary login
-                            id is <strong>{{hsptModel.hsptUsers[0].loginId}}</strong>.
+                        <h2 class="card-title">{{hsptModel.name}}</h2>
+                        <p class="card-text text-start">
+                            Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}}
+                                {{hsptModel.hsptUsers[0].middleName}} {{hsptModel.hsptUsers[0].lastName}}</strong>
+                            to register <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been
+                            completed.
                         </p>
-                        <p class="card-text">
-                            Login here.The email has been sent on your register email id <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
+                        <p class="card-text text-start">
+                            <strong>{{hsptModel.hsptUsers[0].loginId}}</strong> is primary login id for Hospital.
+                        </p>
+                        <p class="card-text text-start">
+                            The email has been sent on your register email id
+                            <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
+                            Verify the email before login. You can
+                            <a href="#" class="text-success stretched-link">Login here</a>.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
