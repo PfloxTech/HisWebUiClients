@@ -16,7 +16,8 @@ export class HsptaddressComponent implements OnInit {
   countryList: Array<CountryModel> = new Array<CountryModel>();
   stateList: Array<StateModel> = new Array<StateModel>();
   districtList: Array<DistrictModel> = new Array<DistrictModel>();
-  @Input() hsptAddressModel: HsptAddressModel = new HsptAddressModel();
+  @Input()
+  hsptAddressModel: HsptAddressModel = new HsptAddressModel();
 
   constructor(
     private router: Router,
@@ -26,6 +27,20 @@ export class HsptaddressComponent implements OnInit {
   ngOnInit(): void {
     this.registerService.getCountry().subscribe((data: any) => {
       this.countryList = data;
+    });
+  }
+
+  getStates(filterdId: string) {
+    var id = Number(filterdId);
+    this.registerService.getState(id).subscribe((data: any) => {
+      this.stateList = data;
+    });
+  }
+
+  getDistrict(filterId: string) {
+    var id = Number(filterId);
+    this.registerService.getDistrict(id).subscribe((data: any) => {
+      this.districtList = data;
     });
   }
 }

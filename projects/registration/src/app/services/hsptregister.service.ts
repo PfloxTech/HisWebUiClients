@@ -24,25 +24,24 @@ export class HsptregisterService {
       `${this.config.baseUrl}api/Registration/getBilling`
     );
   }
-  //
+
   getCountry() {
     return this.httpClient.get(
       `${this.config.baseUrl}api/Registration/getCountries`
     );
   }
 
-  getState() {
+  getState(filterId: any) {
     return this.httpClient.get(
-      `${this.config.baseUrl}api/Registration/getStates`
+      `${this.config.baseUrl}api/Registration/getStates/${filterId}`
     );
   }
 
-  getDistrict() {
+  getDistrict(filterId: number) {
     return this.httpClient.get(
-      `${this.config.baseUrl}api/Registration/getDistricts`
+      `${this.config.baseUrl}api/Registration/getDistricts/${filterId}`
     );
   }
-  //
 
   setRegisterModel(_hsptModel: HsptModel) {
     this.hsptModel = _hsptModel;

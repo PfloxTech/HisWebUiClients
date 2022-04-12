@@ -12,7 +12,12 @@
       <label for="ddlAddressCountry" class="form-label">
         Country<span class="text-danger">*</span>
       </label>
-      <select class="form-control" id="ddlAddressCountry">
+      <select
+        class="form-control"
+        id="ddlAddressCountry"
+        #ddlCountry
+        (change)="getStates(ddlCountry.value)"
+      >
         <option value="0">Select Country</option>
         <option *ngFor="let country of countryList" value="{{ country.pk }}">
           {{ country.displayText }}
@@ -28,16 +33,13 @@
       <select
         class="form-control"
         id="ddlAddressState"
-        [(ngModel)]="hsptAddressModel.State"
+        #ddlState
+        (change)="getDistrict(ddlState.value)"
       >
-        <option value="">Select state</option>
-        <option value="35">Andaman &amp; Nicobar Islands</option>
-        <option value="28">Andhra Pradesh</option>
-        <option value="12">Arunachal Pradesh</option>
-        <option value="18">Assam</option>
-        <option value="10">Bihar</option>
-        <option value="4">Chandigarh</option>
-        <option value="22">Chhatisgarh</option>
+        <option value="0">Select state</option>
+        <option *ngFor="let state of stateList" value="{{ state.pk }}">
+          {{ state.displayText }}
+        </option>
       </select>
     </div>
   </div>
@@ -46,17 +48,11 @@
       <label for="txtAddressDistrict" class="form-label">
         District<span class="text-danger">*</span>
       </label>
-      <select
-        class="form-control"
-        id="ddlAddressDistrict"
-        [(ngModel)]="hsptAddressModel.District"
-      >
-        <option value="">Select District</option>
-        <option value="1">Agra</option>
-        <option value="2">Gautam Budh Nagar</option>
-        <option value="3">Ghaziabad</option>
-        <option value="4">Aligarh</option>
-        <option value="5">Sambhal</option>
+      <select class="form-control" id="ddlAddressDistrict">
+        <option value="0">Select District</option>
+        <option *ngFor="let district of districtList" value="{{ district.pk }}">
+          {{ district.displayText }}
+        </option>
       </select>
     </div>
   </div>
