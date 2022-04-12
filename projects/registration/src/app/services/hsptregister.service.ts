@@ -31,7 +31,7 @@ export class HsptregisterService {
     );
   }
 
-  getState(filterId: any) {
+  getState(filterId: number) {
     return this.httpClient.get(
       `${this.config.baseUrl}api/Registration/getStates/${filterId}`
     );

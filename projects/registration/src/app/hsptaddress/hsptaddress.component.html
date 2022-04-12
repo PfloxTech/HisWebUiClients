@@ -18,7 +18,7 @@
         #ddlCountry
         (change)="getStates(ddlCountry.value)"
       >
-        <option value="0">Select Country</option>
+        <option value="0">SELECT COUNTRY</option>
         <option *ngFor="let country of countryList" value="{{ country.pk }}">
           {{ country.displayText }}
         </option>
@@ -36,7 +36,7 @@
         #ddlState
         (change)="getDistrict(ddlState.value)"
       >
-        <option value="0">Select state</option>
+        <option value="0">SELECT STATE</option>
         <option *ngFor="let state of stateList" value="{{ state.pk }}">
           {{ state.displayText }}
         </option>
@@ -49,7 +49,7 @@
         District<span class="text-danger">*</span>
       </label>
       <select class="form-control" id="ddlAddressDistrict">
-        <option value="0">Select District</option>
+        <option value="0">SELECT DISTRICT</option>
         <option *ngFor="let district of districtList" value="{{ district.pk }}">
           {{ district.displayText }}
         </option>
