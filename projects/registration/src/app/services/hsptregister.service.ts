@@ -4,6 +4,7 @@ import { AppConfig } from '../AppConfig';
 import { HsptModel } from '../models/hsptmodel';
 import { BillingModel } from '../models/BillingModel';
 import { Observable } from 'rxjs';
+import { OtpModel } from '../models/OtpModel';
 
 @Injectable({
   providedIn: 'root'
@@ -33,4 +34,11 @@ export class HsptregisterService {
   getHospital(hospitalPk: number): Observable<HsptModel> {
     return this.httpClient.get<HsptModel>(`${this.config.baseUrl}api/Registration/GetHospital/${hospitalPk}`);
   }
+
+  sendOtp(toMail: string): Observable<boolean> {
+    var otpModel = new OtpModel();
+    otpModel.Recipient = toMail;
+    return this.httpClient.post<boolean>(`${this.config.baseUrl}api/Registration/SentOtp`, otpModel);
+  }
+
 }

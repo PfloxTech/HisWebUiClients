@@ -47,7 +47,7 @@ export class HsptuserdetailComponent implements OnInit {
 
     var frmValidation = this.validationService.validateForm(this.userDetailsForm);
     if (!frmValidation.IsValid) {
-        return;
+      return;
     }
 
     this.UserModel = this.userDetailsForm.value;
@@ -67,4 +67,19 @@ export class HsptuserdetailComponent implements OnInit {
   close(): void {
     this.errorsList = new Array<string>();
   }
+
+  sendOtp(): void {
+    var ctrl = this.userDetailsForm.controls;
+    if (ctrl['emailId'].errors?.['email']) {
+      return;
+    }
+    this.hsptRgisterService.sendOtp(this.userDetailsForm.value.emailId).subscribe(data => {
+      if (data === true) {
+        
+      }
+    });
+  }
+
+
+
 }

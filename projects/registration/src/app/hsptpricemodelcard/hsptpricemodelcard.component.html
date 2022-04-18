@@ -7,7 +7,14 @@
                 <ul>
                     <li class="card-text">{{price.monthDuration}} Months</li>
                     <li class="card-text">{{price.price}} &#x20B9; </li>
-                    <li><a href="#" class="card-link">More Details</a></li>
+                    <li class="card-text">{{price.users}} Users </li>
+                    <li class="card-text">{{price.support}} </li>
+                    <li *ngIf="price.modules.length>0">
+                        <span>Modules: </span>
+                        <span *ngFor="let module of price.modules; let isLast = last;">
+                            {{module}}<ng-container *ngIf="!isLast">,</ng-container>
+                        </span>
+                    </li>
                 </ul>
                 <button type="button" class="btn btn-primary" (click)="priceModel(price.pk)">Continue</button>
             </div>
