@@ -5,7 +5,7 @@
                 <label for="txtHsptName" class="form-label">
                     Hospital Name<span class="text-danger">*</span>
                 </label>
-                <input type="text" class="form-control" id="txtHsptName" formControlName="name" />
+                <input type="text" class="form-control" id="txtHsptName" [(ngModel)]="hsptModel.name" formControlName="name" />
             </div>
         </div>
         <div class="col-3">

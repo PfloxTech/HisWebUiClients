@@ -16,7 +16,7 @@
                             <label for="txtFirstName" class="form-label">
                                 First Name<span class="text-danger">*</span>
                             </label>
-                            <input type="text" class="form-control" id="txtFirstName" formControlName="firstName" />
+                            <input type="text" class="form-control" id="txtFirstName" [(ngModel)]="UserModel.firstName" formControlName="firstName" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -24,7 +24,7 @@
                             <label for="txtMiddleName" class="form-label">
                                 Middle Name
                             </label>
-                            <input type="text" class="form-control" id="txtMidleName" formControlName="middleName" />
+                            <input type="text" class="form-control" id="txtMidleName" [(ngModel)]="UserModel.middleName" formControlName="middleName" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -32,7 +32,7 @@
                             <label for="txtLastName" class="form-label">
                                 Last Name
                             </label>
-                            <input type="text" class="form-control" id="txtLastName" formControlName="lastName" />
+                            <input type="text" class="form-control" id="txtLastName" [(ngModel)]="UserModel.lastName" formControlName="lastName" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -40,7 +40,7 @@
                             <label for="txtPhone" class="form-label">
                                 Mobile No
                             </label>
-                            <input type="text" class="form-control" id="txtPhone" formControlName="phone" />
+                            <input type="tel" class="form-control" id="txtPhone" [(ngModel)]="UserModel.phone" formControlName="phone" maxlength="10" />
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <span class="input-group-text" id="spanLogonId"><img
                                     src="../../assets/img/man.png" /></span>
                             <input type="text" class="form-control" id="txtLogonId" aria-describedby="basic-addon2"
-                                formControlName="loginId" />
+                                formControlName="loginId" [(ngModel)]="UserModel.loginId" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -64,7 +64,7 @@
                             <span class="input-group-text">
                                 <img src="../../assets/img/password.png" />
                             </span>
-                            <input type="password" class="form-control" id="txtPassword" formControlName="password" />
+                            <input type="password" class="form-control" id="txtPassword" formControlName="password" [(ngModel)]="UserModel.password" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -74,7 +74,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text"><img src="../../assets/img/password.png" /></span>
                             <input type="password" class="form-control" id="txtConFirmPassword"
-                                formControlName="confirmPassword" />
+                                formControlName="confirmPassword" [(ngModel)]="UserModel.confirmPassword" />
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                                 Email Id
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="text" class="form-control" id="txtEmailId" formControlName="emailId" />
+                            <input type="text" class="form-control" id="txtEmailId" formControlName="emailId" [(ngModel)]="UserModel.emailId" />
                         </div>
                     </div>
                     <div class="col-3">

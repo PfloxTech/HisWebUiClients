@@ -5,6 +5,7 @@ import { HsptModel } from '../models/hsptmodel';
 import { BillingModel } from '../models/BillingModel';
 import { Observable } from 'rxjs';
 import { OtpModel } from '../models/OtpModel';
+import { HsptUserModel } from '../models/hsptUserModel';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { OtpModel } from '../models/OtpModel';
 export class HsptregisterService {
 
   hsptModel: HsptModel = new HsptModel();
+  _hsptUserModel: HsptUserModel = new HsptUserModel();
 
   constructor(private httpClient: HttpClient, private config: AppConfig) { }
 
@@ -29,6 +31,14 @@ export class HsptregisterService {
 
   getRegisterModel(): HsptModel {
     return this.hsptModel;
+  }
+
+  setUserModel(userModel: HsptUserModel) {
+    this._hsptUserModel = userModel;
+  }
+
+  getUserModel(userModel: HsptUserModel) {
+    return this._hsptUserModel;
   }
 
   getHospital(hospitalPk: number): Observable<HsptModel> {

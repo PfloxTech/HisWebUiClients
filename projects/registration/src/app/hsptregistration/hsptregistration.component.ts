@@ -30,6 +30,7 @@ export class HsptregistrationComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.hospitalModel = this.hsptRgisterService.getRegisterModel();
   }
 
   next(): void {

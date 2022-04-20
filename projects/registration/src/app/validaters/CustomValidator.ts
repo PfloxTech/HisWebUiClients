@@ -1,8 +1,5 @@
 import { FormControl, ValidationErrors } from '@angular/forms';
-import { ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
-
 export class CustomValidator {
 
     static Required(ctrl: FormControl): ValidationErrors | null {
@@ -55,4 +52,35 @@ export class CustomValidator {
         }
         return null;
     }
+
+    public static IsMobileNumber(ctrl: FormControl): ValidationErrors | null {
+        if (CustomValidator.CtrlHasValue(ctrl)) {
+            var regex = new RegExp('[0-9]{10}');
+            var match = regex.test(ctrl.value);
+            if (!match) {
+                var error: ValidationErrors = { "InvalidPhone": `Please provide valid mobile number ${ctrl.value} is invalid mobile number` };
+                return error;
+            }
+        }
+        return null;
+    }
+
+    private static IsNumber(number: any): boolean {
+        if (number == undefined || number == null) {
+            return false;
+        }
+        return isNaN(number);
+    }
+
+    private static CtrlHasValue(ctrl: FormControl): boolean {
+        if (ctrl.value == undefined || ctrl.value == null) {
+            return false;
+        }
+
+        if (ctrl.value.toString().trim().length > 0) {
+            return true;
+        }
+        return false;
+    }
+
 }
