@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SpecialityService } from '../services/speciality.service';
-
+import { Input } from '@angular/core';
+import { FetaureModel } from '../models/FeatureModel';
+import { PostFeatureModel } from '../models/PostFeatureModel';
 @Component({
   selector: 'app-hsptspeciality',
   templateUrl: './hsptspeciality.component.html',
@@ -8,13 +9,12 @@ import { SpecialityService } from '../services/speciality.service';
 })
 export class HsptspecialityComponent implements OnInit {
 
-  constructor(private specialityService: SpecialityService) { }
-  specialities: any;
-
+  @Input()
+  HsptSpecialities: Array<PostFeatureModel> = new Array<PostFeatureModel>();
+  constructor() { }
+  methodName = "GetSpeciality";
   ngOnInit(): void {
-    this.specialityService.getSpeciality().subscribe((data: any) => {
-      this.specialities = data;
-    });
+
   }
 
 }

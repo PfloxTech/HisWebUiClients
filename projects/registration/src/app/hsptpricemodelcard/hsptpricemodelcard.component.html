@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-3" *ngFor="let price of priceList">
+        <div class="card mt-2 ms-2 shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            <img src="../assets/img/price-tag.png" class="card-img-top mt-2" alt="...">
+            <div class="card-body pb-0 pt-0">
+                <h2 class="card-title mb-0 mt-0">{{price.name}}</h2>
+                <ul>
+                    <li class="card-text">{{price.monthDuration}} Months</li>
+                    <li class="card-text">{{price.price}} &#x20B9; </li>
+                    <li class="card-text">{{price.users}} Users </li>
+                    <li class="card-text">{{price.support}} </li>
+                    <li *ngIf="price.modules.length>0">
+                        <span>Modules: </span>
+                        <span *ngFor="let module of price.modules; let isLast = last;">
+                            {{module}}<ng-container *ngIf="!isLast">,</ng-container>
+                        </span>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary" (click)="priceModel(price.pk)">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

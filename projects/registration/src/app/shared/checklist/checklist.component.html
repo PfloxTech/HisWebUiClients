@@ -1,0 +1,6 @@
+<div *ngIf="featureParentList!=null && featureParentList.length>0">
+    <div class="form-check form-check-inline" id="chkdev" *ngFor="let feature of featureParentList">
+        <input class="form-check-input" type="checkbox" id="chk{{feature.id}}" [(ngModel)]="feature.isSelected"/>
+        <label class="form-check-label" for="inlineCheckbox1">{{feature.displayText}}</label>
+    </div>
+</div>

@@ -53,9 +53,10 @@
               "projects/registration/src/assets"
             ],
             "styles": [
-              "projects/registration/src/styles.less",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "projects/registration/src/assets/css/bootstrap-override.less"
+              "projects/registration/src/assets/css/bootstrap-override.less",
+              "projects/registration/src/assets/css/styles.less"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -125,9 +126,10 @@
               "projects/registration/src/assets"
             ],
             "styles": [
-              "projects/registration/src/styles.less",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "projects/registration/src/assets/css/bootstrap-override.less"
+              "projects/registration/src/assets/css/bootstrap-override.less",
+              "projects/registration/src/assets/css/styles.less"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"

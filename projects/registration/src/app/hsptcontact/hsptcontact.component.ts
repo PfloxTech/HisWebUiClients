@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { HsptContactModel } from '../models/hsptcontactmodel'; 
 
 @Component({
   selector: 'app-hsptcontact',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsptcontactComponent implements OnInit {
 
+  @Input() hsptContactModel: HsptContactModel = new HsptContactModel();
+
+
   constructor() { }
 
   ngOnInit(): void {
+      
   }
 
 }

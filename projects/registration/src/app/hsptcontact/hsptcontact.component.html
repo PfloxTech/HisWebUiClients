@@ -1,1 +1,69 @@
-<p>hsptcontact works!</p>
+<div class="row">
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactPhone" class="form-label">
+                Phone
+            </label>
+            <input type="text" class="form-control" id="txtContactPhone" [(ngModel)]="hsptContactModel.phone" />
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactCell" class="form-label">
+                Cell
+            </label>
+            <input type="text" class="form-control" id="txtContactCell" [(ngModel)]="hsptContactModel.cell" />
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactEmergency" class="form-label">
+                Emergency
+            </label>
+            <input type="text" class="form-control" id="txtContactEmergency" [(ngModel)]="hsptContactModel.emergency" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactAmbulance" class="form-label">
+                Ambulance
+            </label>
+            <input type="text" class="form-control" id="txtContactAmbulance" [(ngModel)]="hsptContactModel.ambulanceNumber" />
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactBloodBank" class="form-label">
+                Blood Bank
+            </label>
+            <input type="text" class="form-control" id="txtContactBloodBank" [(ngModel)]="hsptContactModel.bloodBank" />
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtContactFpC" class="form-label">
+                Foreign Patient Care/ International Patient Wing
+            </label>
+            <input type="text" class="form-control" id="txtContactFpC" [(ngModel)]="hsptContactModel.fpc" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtContactFax" class="form-label">
+                    Fax No.
+                </label>
+                <input type="text" class="form-control" id="txtContactFax" [(ngModel)]="hsptContactModel.fax" />
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3 ms-2">
+                <label for="txtContactEmail" class="form-label">
+                    Email Id
+                </label>
+                <input type="text" class="form-control" id="txtContactEmail" [(ngModel)]="hsptContactModel.emailId" />
+            </div>
+        </div>        
+</div>
