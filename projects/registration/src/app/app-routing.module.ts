@@ -6,9 +6,9 @@ import { HsptuserdetailComponent } from './hsptuserdetail/hsptuserdetail.compone
 import { HsptwelcomeComponent } from './hsptwelcome/hsptwelcome.component';
 
 const routes: Routes = [{ path: '', component: HspthomeComponent },
-{ path: 'hospital-registration/:priceModelId', component: HsptregistrationComponent },
+{ path: 'hospital-registration', component: HsptregistrationComponent },
 { path: 'hospital-user', component: HsptuserdetailComponent },
-{ path: 'hospital-welcome/:hospitalPk', component: HsptwelcomeComponent }];
+{ path: 'hospital-welcome/:hsptSysRegNum', component: HsptwelcomeComponent }];
 
 const routesConfig: ExtraOptions = { scrollPositionRestoration: 'enabled' };
 

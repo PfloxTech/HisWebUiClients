@@ -35,13 +35,12 @@ export class HsptuserdetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
-    this.UserModel = this.hsptRgisterService.getUserModel(this.UserModel);
+    this.UserModel = this.hsptRgisterService.getUserModel();
   }
 
   back(): void {
-    var priceModelId = this.hsptModel.billingFk;
     this.hsptRgisterService.setUserModel(this.UserModel);
-    this.router.navigate(["hospital-registration", priceModelId]);
+    this.router.navigate(["hospital-registration"]);
   }
 
 

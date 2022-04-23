@@ -14,7 +14,7 @@ export class HsptregisterService {
 
   hsptModel: HsptModel = new HsptModel();
   _hsptUserModel: HsptUserModel = new HsptUserModel();
-
+  _pricModelId: number = 0;
   constructor(private httpClient: HttpClient, private config: AppConfig) { }
 
   register(model: HsptModel) {
@@ -37,8 +37,16 @@ export class HsptregisterService {
     this._hsptUserModel = userModel;
   }
 
-  getUserModel(userModel: HsptUserModel) {
+  getUserModel(): HsptUserModel {
     return this._hsptUserModel;
+  }
+
+  setPriceModelId(priceModelId: number) {
+    this._pricModelId = priceModelId;
+  }
+
+  getPriceModelId(): number {
+    return this._pricModelId;
   }
 
   getHospital(hospitalPk: number): Observable<HsptModel> {
