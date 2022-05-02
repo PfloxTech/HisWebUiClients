@@ -1,73 +1,153 @@
 <div>
-    <div class="row" [formGroup]="form">
-        <div class="col-6">
-            <div class="mb-3">
-                <label for="txtHsptName" class="form-label">
-                    Hospital Name<span class="text-danger">*</span>
-                </label>
-                <input type="text" class="form-control" id="txtHsptName" formControlName="name" />
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtHsptRegNum" class="form-label">
-                    Hospital Registration Number
-                </label>
-                <input type="text" class="form-control" id="txtHsptRegNum" [(ngModel)]="hsptModel.registerNum" [ngModelOptions]="{standalone: true}" />
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtHsptRegDate" class="form-label">
-                    Hospital Registration Date
-                </label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="txtHsptRegDate" formControlName="registerDate"
-                        matInput [matDatepicker]="picker" [disabled]=true/>
-                    <span class="input-group-text">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker disabled="false"></mat-datepicker>
-                    </span>
-                </div>
-            </div>
-        </div>
+  <div class="row" [formGroup]="form">
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="txtHsptName" class="form-label">
+          Hospital Name<span class="text-danger">*</span>
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtHsptName"
+          formControlName="name"
+        />
+      </div>
     </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtHsptWebSite" class="form-label">
-                    Hospital WebSite
-                </label>
-                <input type="text" class="form-control" id="txtHsptWebSite" [(ngModel)]="hsptModel.website" />
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtHsptPan" class="form-label">
-                    Hospital PAN
-                </label>
-                <input type="text" class="form-control" id="txtHsptPan" [(ngModel)]="hsptModel.panNum" />
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtHsptGstNum" class="form-label">
-                    Hospital GST
-                </label>
-                <input type="text" class="form-control" id="txtHsptGstNum" [(ngModel)]="hsptModel.gstNum" />
-            </div>
-        </div>
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtHsptRegNum" class="form-label">
+          Hospital Registration Number
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtHsptRegNum"
+          [(ngModel)]="hsptModel.registerNum"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="mb-3">
-                <label for="txtAccreditation" class="form-label">
-                    Accreditation <i>(For e.g NABH/NABL/JCI/ISO/Others) (For Hospital/Blood Bank/
-                        Laboratory)</i>
-                </label>
-                <textarea class="form-control" id="txtAccreditation" rows="3"
-                    [(ngModel)]="hsptModel.accreditation"></textarea>
-            </div>
+    <div class="col-2">
+      <div class="mb-3">
+        <label for="txtHsptRegDate" class="form-label">
+          Hospital Registration Date
+        </label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="txtHsptRegDate"
+            formControlName="registerDate"
+            matInput
+            [matDatepicker]="picker"
+            [disabled]="true"
+          />
+          <span class="input-group-text">
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker disabled="false"></mat-datepicker>
+          </span>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtHsptWebSite" class="form-label">
+          Hospital WebSite
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtHsptWebSite"
+          [(ngModel)]="hsptModel.website"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtHsptPan" class="form-label"> Hospital PAN </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtHsptPan"
+          [(ngModel)]="hsptModel.panNum"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtHsptGstNum" class="form-label"> Hospital GST </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtHsptGstNum"
+          [(ngModel)]="hsptModel.gstNum"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-3">
+        <label for="txtAccreditation" class="form-label">
+          Accreditation
+          <i
+            >(For e.g NABH/NABL/JCI/ISO/Others) (For Hospital/Blood Bank/
+            Laboratory)</i
+          >
+        </label>
+        <textarea
+          class="form-control"
+          id="txtAccreditation"
+          rows="3"
+          [(ngModel)]="hsptModel.accreditation"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtNodelOfficerName" class="form-label">
+          Nodel Officer Name
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtNodelOfficerName"
+          [(ngModel)]="hsptModel.nodelOfficerName"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtNodelOfficerNum" class="form-label">
+          Nodel Officer Phone Number
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtNodelOfficerNum"
+          [(ngModel)]="hsptModel.nodelOfficerNum"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="mb-3">
+        <label for="txtNodelOfficerEmail" class="form-label">
+          Nodel Officer EmailId
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtNodelOfficerEmail"
+          [(ngModel)]="hsptModel.nodelOfficerEmailId"
+        />
+      </div>
+    </div>
+  </div>
 </div>

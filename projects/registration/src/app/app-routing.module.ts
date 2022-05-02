@@ -5,15 +5,20 @@ import { HsptregistrationComponent } from './hsptregistration/hsptregistration.c
 import { HsptuserdetailComponent } from './hsptuserdetail/hsptuserdetail.component';
 import { HsptwelcomeComponent } from './hsptwelcome/hsptwelcome.component';
 
-const routes: Routes = [{ path: '', component: HspthomeComponent },
-{ path: 'hospital-registration/:priceModelId', component: HsptregistrationComponent },
-{ path: 'hospital-user', component: HsptuserdetailComponent },
-{ path: 'hospital-welcome/:hospitalPk', component: HsptwelcomeComponent }];
+const routes: Routes = [
+  { path: '', component: HspthomeComponent },
+  {
+    path: 'hospital-registration/:priceModelId',
+    component: HsptregistrationComponent,
+  },
+  { path: 'hospital-user', component: HsptuserdetailComponent },
+  { path: 'hospital-welcome/:hospitalPk', component: HsptwelcomeComponent },
+];
 
 const routesConfig: ExtraOptions = { scrollPositionRestoration: 'enabled' };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routesConfig)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

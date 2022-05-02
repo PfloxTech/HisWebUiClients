@@ -29,8 +29,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastmessageComponent } from './shared/toastmessage/toastmessage.component';
 import { MatDialogModule } from '@angular/material/dialog';
+// import { MatSelectModule } from '@angular/material/select';
 
-function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => Promise<boolean> {
+function initializeAppFactory(
+  httpClient: HttpClient,
+  config: AppConfig
+): () => Promise<boolean> {
   return (): Promise<boolean> => {
     return new Promise<boolean>((resolve: (a: boolean) => void): void => {
       httpClient.get('assets/data/appConfig.json').subscribe((data: any) => {
@@ -38,7 +42,7 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
         resolve(true);
       });
     });
-  }
+  };
 }
 
 @NgModule({
@@ -60,7 +64,7 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
     HspthomeComponent,
     HsptuserdetailComponent,
     HsptwelcomeComponent,
-    ToastmessageComponent
+    ToastmessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,19 +76,21 @@ function initializeAppFactory(httpClient: HttpClient, config: AppConfig): () => 
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    // ,
+    // MatSelectModule,
   ],
   providers: [
     {
       provide: APP_INITIALIZER,
       useFactory: initializeAppFactory,
-      deps: [
-        HttpClient,
-        AppConfig
-      ],
-      multi: true
+      deps: [HttpClient, AppConfig],
+      multi: true,
     },
-    MatDatepickerModule],
-  bootstrap: [AppComponent]
+    MatDatepickerModule,
+    // ,
+    // MatSelectModule,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

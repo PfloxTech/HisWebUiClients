@@ -1,1 +1,143 @@
-<p>hsptaddress works!</p>
+<div class="row">
+  <div class="col-8">
+    <div class="mb-3">
+      <label for="txtAddress" class="form-label">
+        Address<span class="text-danger">*</span>
+      </label>
+      <textarea
+        class="form-control"
+        id="txtAddress"
+        rows="3"
+        [(ngModel)]="hsptModel.hsptAddress.Address"
+      ></textarea>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="ddlAddressCountry" class="form-label">
+        Country<span class="text-danger">*</span>
+      </label>
+      <select
+        class="form-select"
+        id="ddlAddressCountry"
+        aria-label="Country"
+        [(ngModel)]="hsptModel.hsptAddress.CountryFk"
+      >
+        <option *ngFor="let country of countryList" value="{{ country.pk }}">
+          {{ country.displayText }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="ddlAddressState" class="form-label">
+        State<span class="text-danger">*</span>
+      </label>
+      <select
+        class="form-select"
+        id="ddlAddressState"
+        #ddlState
+        (change)="getDistrict(ddlState.value)"
+        aria-label="State"
+        [(ngModel)]="hsptModel.hsptAddress.StateFk"
+      >
+        <option value="0" disabled>SELECT STATE</option>
+        <option *ngFor="let state of stateList" value="{{ state.pk }}">
+          {{ state.displayText }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="txtAddressDistrict" class="form-label">
+        District<span class="text-danger">*</span>
+      </label>
+      <select
+        class="form-select"
+        id="ddlAddressDistrict"
+        atria-label="District"
+        [(ngModel)]="hsptModel.hsptAddress.DistrictFk"
+      >
+        <option value="0" disabled>SELECT DISTRICT</option>
+        <option *ngFor="let district of districtList" [ngValue]="district.pk">
+          {{ district.displayText }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="txtAddressCity" class="form-label">
+        City<span class="text-danger">*</span>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressCity"
+        [(ngModel)]="hsptModel.hsptAddress.City"
+      />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPinCode" class="form-label"> PinCode </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPinCode"
+        [(ngModel)]="hsptModel.hsptAddress.PinCode"
+      />
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="txtAddressLandMark" class="form-label"> LandMark </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressLandMark"
+        [(ngModel)]="hsptModel.hsptAddress.LandMark"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPhone1" class="form-label"> Phone1 </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPhone1"
+        [(ngModel)]="hsptModel.hsptAddress.Phone1"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressPhone2" class="form-label"> Phone2 </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressPhone2"
+        [(ngModel)]="hsptModel.hsptAddress.Phone2"
+      />
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="mb-3">
+      <label for="txtAddressFax" class="form-label"> Fax </label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtAddressFax"
+        [(ngModel)]="hsptModel.hsptAddress.Fax"
+      />
+    </div>
+  </div>
+</div>
