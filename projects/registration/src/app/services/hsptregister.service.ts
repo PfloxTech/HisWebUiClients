@@ -6,6 +6,8 @@ import { BillingModel } from '../models/BillingModel';
 import { Observable } from 'rxjs';
 import { OtpModel } from '../models/OtpModel';
 import { HsptUserModel } from '../models/hsptUserModel';
+import { FetaureModel } from '../models/FeatureModel';
+import { FeatureService } from './feature.service';
 
 @Injectable({
   providedIn: 'root',
