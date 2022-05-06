@@ -6,23 +6,29 @@ import { BillingModel } from '../models/BillingModel';
 import { Observable } from 'rxjs';
 import { OtpModel } from '../models/OtpModel';
 import { HsptUserModel } from '../models/hsptUserModel';
+import { FetaureModel } from '../models/FeatureModel';
+import { FeatureService } from './feature.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HsptregisterService {
-
   hsptModel: HsptModel = new HsptModel();
   _hsptUserModel: HsptUserModel = new HsptUserModel();
   _pricModelId: number = 0;
   constructor(private httpClient: HttpClient, private config: AppConfig) { }
 
   register(model: HsptModel) {
-    return this.httpClient.post(`${this.config.baseUrl}api/Registration/RegisterHospital`, model)
+    return this.httpClient.post(
+      `${this.config.baseUrl}api/Registration/RegisterHospital`,
+      model
+    );
   }
 
   getBilling(): Observable<Array<BillingModel>> {
-    return this.httpClient.get<Array<BillingModel>>(`${this.config.baseUrl}api/Registration/getBilling`);
+    return this.httpClient.get<Array<BillingModel>>(
+      `${this.config.baseUrl}api/Registration/getBilling`
+    );
   }
 
   setRegisterModel(_hsptModel: HsptModel) {
@@ -50,7 +56,27 @@ export class HsptregisterService {
   }
 
   getHospital(hospitalPk: number): Observable<HsptModel> {
-    return this.httpClient.get<HsptModel>(`${this.config.baseUrl}api/Registration/GetHospital/${hospitalPk}`);
+    return this.httpClient.get<HsptModel>(
+      `${this.config.baseUrl}api/Registration/GetHospital/${hospitalPk}`
+    );
+  }
+
+  getCountry(): Observable<FetaureModel> {
+    return this.httpClient.get<FetaureModel>(
+      `${this.config.baseUrl}api/Registration/getCountries`
+    );
+  }
+
+  getState(filterId: number): Observable<FetaureModel> {
+    return this.httpClient.get<FetaureModel>(
+      `${this.config.baseUrl}api/Registration/GetStatesByCountryId/${filterId}`
+    );
+  }
+
+  getDistrict(filterId: number): Observable<FetaureModel> {
+    return this.httpClient.get<FetaureModel>(
+      `${this.config.baseUrl}api/Registration/GetDistrictsByStateId/${filterId}`
+    );
   }
 
   sendOtp(toMail: string): Observable<boolean> {

@@ -14,6 +14,6 @@ const routesConfig: ExtraOptions = { scrollPositionRestoration: 'enabled' };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routesConfig)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

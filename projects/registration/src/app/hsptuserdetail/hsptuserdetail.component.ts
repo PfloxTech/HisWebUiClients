@@ -3,19 +3,19 @@ import { Router } from '@angular/router';
 import { HsptUserModel } from '../models/hsptUserModel';
 import { HsptregisterService } from '../services/hsptregister.service';
 import { HsptModel } from '../models/hsptmodel';
-import { HsptContactModel } from '../models/hsptcontactmodel';
+import { HsptContactModel } from '../models/HsptContactModel';
 import { HsptMiscellaneousModel } from '../models/HsptMiscellaneousModel';
 import { CustomValidator } from '../validaters/CustomValidator';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ValidationService } from '../validaters/validation.service';
+import { HsptAddressModel } from '../models/HsptAddressModel';
 
 @Component({
   selector: 'app-hsptuserdetail',
   templateUrl: './hsptuserdetail.component.html',
-  styleUrls: ['./hsptuserdetail.component.less']
+  styleUrls: ['./hsptuserdetail.component.less'],
 })
 export class HsptuserdetailComponent implements OnInit {
-
   hsptModel: HsptModel = new HsptModel();
   UserModel: HsptUserModel = new HsptUserModel();
   errorsList: Array<string> = new Array<string>();
@@ -43,7 +43,6 @@ export class HsptuserdetailComponent implements OnInit {
     this.router.navigate(["hospital-registration"]);
   }
 
-
   next(): void {
     this.hsptRgisterService.setUserModel(this.UserModel);
     var frmValidation = this.validationService.validateForm(this.userDetailsForm);
@@ -58,9 +57,11 @@ export class HsptuserdetailComponent implements OnInit {
     this.hsptModel.hsptContacts.push(this.hsptModel.hsptContact);
     this.hsptModel.hsptMiscellaneousList = new Array<HsptMiscellaneousModel>();
     this.hsptModel.hsptMiscellaneousList.push(this.hsptModel.hsptMiscellaneous);
-    this.hsptRgisterService.register(this.hsptModel).subscribe(data => {
+    this.hsptModel.hsptAddresses = new Array<HsptAddressModel>();
+    this.hsptModel.hsptAddresses.push(this.hsptModel.hsptAddress);
+    this.hsptRgisterService.register(this.hsptModel).subscribe((data) => {
       var hsptSysRegNum = data;
-      this.router.navigate(["hospital-welcome", hsptSysRegNum]);
+      this.router.navigate(['hospital-welcome', hsptSysRegNum]);
     });
   }
 
