@@ -19,49 +19,38 @@ export class HsptuserdetailComponent implements OnInit {
   hsptModel: HsptModel = new HsptModel();
   UserModel: HsptUserModel = new HsptUserModel();
   errorsList: Array<string> = new Array<string>();
-  userDetailsForm: FormGroup = this.fb.group(
-    {
-      firstName: [null, CustomValidator.Required],
-      lastName: [null],
-      middleName: [null],
-      emailId: [null, [CustomValidator.Required, CustomValidator.Email]],
-      loginId: [null, [CustomValidator.Required]],
-      phone: [null],
-      password: [null, [CustomValidator.Required, CustomValidator.Password]],
-      confirmPassword: [
-        null,
-        { validators: [CustomValidator.Required, CustomValidator.Password] },
-      ],
-      otp: [null, [CustomValidator.Required]],
-    },
-    { validators: CustomValidator.PasswordMatch, updateOn: 'blur' }
-  );
-  constructor(
-    private router: Router,
-    private hsptRgisterService: HsptregisterService,
-    private fb: FormBuilder,
-    private validationService: ValidationService
-  ) {}
+  userDetailsForm: FormGroup = this.fb.group({
+    firstName: [null, CustomValidator.Required],
+    lastName: [null],
+    middleName: [null],
+    emailId: [null, [CustomValidator.Required, CustomValidator.Email]],
+    loginId: [null, [CustomValidator.Required]],
+    phone: [null, CustomValidator.IsMobileNumber],
+    password: [null, [CustomValidator.Required, CustomValidator.Password]],
+    confirmPassword: [null, { validators: [CustomValidator.Required, CustomValidator.Password] }],
+    otp: [null, [CustomValidator.Required]],
+  }, { validators: CustomValidator.PasswordMatch, updateOn: "blur" });
+  constructor(private router: Router, private hsptRgisterService: HsptregisterService,
+    private fb: FormBuilder, private validationService: ValidationService) { }
 
   ngOnInit(): void {
     this.hsptModel = this.hsptRgisterService.getRegisterModel();
+    this.UserModel = this.hsptRgisterService.getUserModel();
   }
 
   back(): void {
-    var priceModelId = this.hsptModel.billingFk;
-    this.router.navigate(['hospital-registration', priceModelId]);
+    this.hsptRgisterService.setUserModel(this.UserModel);
+    this.router.navigate(["hospital-registration"]);
   }
 
   next(): void {
-    var frmValidation = this.validationService.validateForm(
-      this.userDetailsForm
-    );
+    this.hsptRgisterService.setUserModel(this.UserModel);
+    var frmValidation = this.validationService.validateForm(this.userDetailsForm);
     if (!frmValidation.IsValid) {
       return;
     }
 
     this.UserModel = this.userDetailsForm.value;
-    this.hsptModel = this.hsptRgisterService.getRegisterModel();
     this.hsptModel.hsptUsers = new Array<HsptUserModel>();
     this.hsptModel.hsptUsers.push(this.UserModel);
     this.hsptModel.hsptContacts = new Array<HsptContactModel>();
@@ -79,4 +68,17 @@ export class HsptuserdetailComponent implements OnInit {
   close(): void {
     this.errorsList = new Array<string>();
   }
+
+  sendOtp(): void {
+    var ctrl = this.userDetailsForm.controls;
+    if (ctrl['emailId'].errors?.['email']) {
+      return;
+    }
+    this.hsptRgisterService.sendOtp(this.userDetailsForm.value.emailId).subscribe(data => {
+      if (data === true) {
+
+      }
+    });
+  }
+
 }

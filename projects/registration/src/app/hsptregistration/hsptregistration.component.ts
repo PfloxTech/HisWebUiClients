@@ -13,7 +13,7 @@ import { ValidationService } from '../validaters/validation.service';
 })
 export class HsptregistrationComponent implements OnInit {
   hospitalModel: HsptModel = new HsptModel();
-  priceModelId: string = '';
+  priceModelId: number = 0;
 
   constructor(
     private router: Router,
@@ -30,7 +30,12 @@ export class HsptregistrationComponent implements OnInit {
     }),
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.hsptRgisterService.getPriceModelId() <= 0) {
+      this.router.navigate(['']);
+    }
+    this.hospitalModel = this.hsptRgisterService.getRegisterModel();
+  }
 
   next(): void {
     var frmValidation = this.validationService.validateForm(this.hsptRegFrm);
@@ -43,9 +48,9 @@ export class HsptregistrationComponent implements OnInit {
     this.hospitalModel.registerDate = generalInfo.registerDate;
 
     this.hsptRgisterService.setRegisterModel(this.hospitalModel);
-    this.priceModelId = this.route.snapshot.paramMap.get('priceModelId')!;
-    this.hospitalModel.billingFk = parseInt(this.priceModelId);
-    this.router.navigate(['hospital-user']);
+    this.priceModelId = this.hsptRgisterService.getPriceModelId();
+    this.hospitalModel.billingFk = this.priceModelId;
+    this.router.navigate(["hospital-user"]);
   }
 
   back(): void {

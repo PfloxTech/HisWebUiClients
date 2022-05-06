@@ -4,16 +4,17 @@ import { AppConfig } from '../AppConfig';
 import { HsptModel } from '../models/hsptmodel';
 import { BillingModel } from '../models/BillingModel';
 import { Observable } from 'rxjs';
-import { FetaureModel } from '../models/FeatureModel';
-import { FeatureService } from './feature.service';
+import { OtpModel } from '../models/OtpModel';
+import { HsptUserModel } from '../models/hsptUserModel';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HsptregisterService {
   hsptModel: HsptModel = new HsptModel();
-
-  constructor(private httpClient: HttpClient, private config: AppConfig) {}
+  _hsptUserModel: HsptUserModel = new HsptUserModel();
+  _pricModelId: number = 0;
+  constructor(private httpClient: HttpClient, private config: AppConfig) { }
 
   register(model: HsptModel) {
     return this.httpClient.post(
@@ -34,6 +35,22 @@ export class HsptregisterService {
 
   getRegisterModel(): HsptModel {
     return this.hsptModel;
+  }
+
+  setUserModel(userModel: HsptUserModel) {
+    this._hsptUserModel = userModel;
+  }
+
+  getUserModel(): HsptUserModel {
+    return this._hsptUserModel;
+  }
+
+  setPriceModelId(priceModelId: number) {
+    this._pricModelId = priceModelId;
+  }
+
+  getPriceModelId(): number {
+    return this._pricModelId;
   }
 
   getHospital(hospitalPk: number): Observable<HsptModel> {
@@ -59,4 +76,11 @@ export class HsptregisterService {
       `${this.config.baseUrl}api/Registration/GetDistrictsByStateId/${filterId}`
     );
   }
+
+  sendOtp(toMail: string): Observable<boolean> {
+    var otpModel = new OtpModel();
+    otpModel.Recipient = toMail;
+    return this.httpClient.post<boolean>(`${this.config.baseUrl}api/Registration/SentOtp`, otpModel);
+  }
+
 }

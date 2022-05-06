@@ -17,7 +17,7 @@ export class HsptwelcomeComponent implements OnInit {
   }
 
   getHospital(): void {
-    var hospitalPk = parseInt(this.route.snapshot.paramMap.get("hospitalPk")!);
+    var hospitalPk = parseInt(this.route.snapshot.paramMap.get("hsptSysRegNum")!);
     this.registerService.getHospital(hospitalPk).subscribe(data => {
       this.hsptModel = data;
     });

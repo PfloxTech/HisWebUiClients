@@ -14,8 +14,8 @@
                         <p class="card-text text-start">
                             Welcome, <strong>{{hsptModel.hsptUsers[0].firstName}}
                                 {{hsptModel.hsptUsers[0].middleName}} {{hsptModel.hsptUsers[0].lastName}}</strong>
-                            to register <strong>{{hsptModel.name}}</strong> hospital with us. The registeration has been
-                            completed.
+                            to register <strong>{{hsptModel.name}}</strong> hospital with us. The hospital system
+                            generated registeration number is<strong> {{hsptModel.sysRegisterNum}}</strong>.
                         </p>
                         <p class="card-text text-start">
                             <strong>{{hsptModel.hsptUsers[0].loginId}}</strong> is primary login id for Hospital.
@@ -23,8 +23,13 @@
                         <p class="card-text text-start">
                             The email has been sent on your register email id
                             <strong>{{hsptModel.hsptUsers[0].emailId}}</strong>.
-                            Verify the email before login. You can
-                            <a href="#" class="text-success stretched-link">Login here</a>.
+                            To complete the registeration verify the register email and login into the application and
+                            complete the rest of setup.
+                            You can <a href="#" class="text-success stretched-link">Login here</a>.
+                        </p>
+                        <p class="card-text text-start">
+                            For registration support you can visit below links:-
+                            Documents, Vidoes, Mail us at techsupport@pfloxtech.com
                         </p>
                     </div>
                 </div>
