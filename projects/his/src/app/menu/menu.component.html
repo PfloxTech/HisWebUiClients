@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/appointment">
+            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/appointment/patientregistration">
                 <img src="../../assets/img/deadline.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 Appointment
@@ -22,14 +22,14 @@
             </a>
         </div>
         <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
+            <a class="navbar-brand" routerLinkActive="activebutton" [routerLink]="['/ipd',{outlets:{'workspace':['patientregistration']}}]">
                 <img src="../../assets/img/hospitalisation.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 IPD
             </a>
         </div>
         <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/opd">
+            <a class="navbar-brand" routerLinkActive="activebutton" [routerLink]="['/opd',{outlets:{'workspace':['patientregistration']}}]">
                 <img src="../../assets/img/examination.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 OPD
