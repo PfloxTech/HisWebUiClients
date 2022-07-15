@@ -23,7 +23,7 @@
                             <label for="txtPassword">Password</label>
                             <input type="password" class="form-control" id="txtPassword" formControlName="password"/>
                         </div>
-                        <a href="#" class="text-decoration-none mt-2">Trouble in Log in?</a>
+                        <a (click)="troubleSign()" class="text-decoration-none mt-2">Trouble in Log in?</a>
                         <div class="d-grid gap-2 mt-2">
                             <button class="btn btn-primary" (click)="onLogon()" type="button">Log in</button>
                           </div>

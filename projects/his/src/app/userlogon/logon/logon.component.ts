@@ -4,6 +4,8 @@ import { LogonService } from '../../services/logon.service';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { UserLogonModel } from '../../services/UserLogonModel';
+import { MatDialog } from '@angular/material/dialog';
+import { ResetPasswordComponent } from '../reset-password/reset-password.component';
 
 @Component({
   selector: 'app-logon',
@@ -18,7 +20,7 @@ export class LogonComponent implements OnInit {
   });
   Error:any;
 
-  constructor(private readonly router: Router, private logonService: LogonService, private fb: FormBuilder) { }
+  constructor(private readonly router: Router, private logonService: LogonService, private fb: FormBuilder, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -41,9 +43,11 @@ export class LogonComponent implements OnInit {
         this.Error=error.error;
       }
       );
-      
-    }
+   }
+}
 
-  }
+troubleSign():void{
+  this.dialog.open(ResetPasswordComponent,{ maxHeight: '220px', width: '400px', disableClose:true });
+}
 
 }
