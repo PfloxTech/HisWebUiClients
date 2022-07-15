@@ -1,5 +1,32 @@
-<div class="toolbar" role="banner">
-    <img width="40" alt="hspt logo" src="../../assets/img/hospital.png" />
-    <span>Welcome</span>
-    <div class="spacer"></div>
+<div class="toolbar row" role="banner">
+    <div class="col-10">
+       <span>
+            <img width="32" alt="hspt logo" src="../../assets/img/hospital.png" />
+       </span>
+        <span>
+            Max Noida
+        </span>
+    </div>
+    <div class="col-2">
+        <span>Welcome, Gaurav Kumar</span>
+        <span class="float-end" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>
+                <img  alt="hspt logo" src="../../assets/img/man.png" />
+            </mat-icon>
+        </span>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Password</span>
+            </button>
+            <button mat-menu-item>
+            <mat-icon>voicemail</mat-icon>
+            <span>Profile</span>
+            </button>
+            <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Logout</span>
+            </button>
+        </mat-menu>
+</div>
 </div>

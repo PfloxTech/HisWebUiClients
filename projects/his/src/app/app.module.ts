@@ -15,6 +15,7 @@ import { AppointmentModule } from './appointment/appointment.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
+import{MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppointmentModule,
     BrowserAnimationsModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

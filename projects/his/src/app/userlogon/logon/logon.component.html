@@ -9,6 +9,9 @@
             </div>
         </div>
         <div class="col-4" [formGroup]="logonForm">
+            <div>
+                <label>{{Error}}</label>
+            </div>
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-13">
                     <form>
@@ -20,13 +23,10 @@
                             <label for="txtPassword">Password</label>
                             <input type="password" class="form-control" id="txtPassword" formControlName="password"/>
                         </div>
-                        <button type="button" class="btn btn-primary mt-2 btn-right" (click)="onLogon()">
-                            Log in
-                        </button>
-                        <a href="#">Trouble in Log in</a>
-                        <div class="form-group">
-                            <label>{{Error}}</label>
-                        </div>
+                        <a href="#" class="text-decoration-none mt-2">Trouble in Log in?</a>
+                        <div class="d-grid gap-2 mt-2">
+                            <button class="btn btn-primary" (click)="onLogon()" type="button">Log in</button>
+                          </div>
                     </form>
                 </div>
             </div>
