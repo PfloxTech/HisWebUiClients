@@ -1,5 +1,5 @@
 <div class="toolbar row" role="banner">
-    <div class="col-10">
+    <div class="col-9">
        <span>
             <img width="32" alt="hspt logo" src="../../assets/img/hospital.png" />
        </span>
@@ -8,7 +8,7 @@
         </span>
     </div>
     <div class="col-2">
-        <span>Welcome, Gaurav Kumar</span>
+        <span>Welcome, {{userInfoModel.firstName}} {{userInfoModel.middleName}} {{userInfoModel.lastName}}</span>
         <span class="float-end" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>
                 <img  alt="hspt logo" src="../../assets/img/man.png" />

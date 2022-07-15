@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LogonService } from '../services/logon.service';
+import { UserInfoModel } from '../models/userinfomodel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userInfoModel!:UserInfoModel;
+
+  constructor(private logonService:LogonService, private router :Router) { }
 
   ngOnInit(): void {
+     this.getUserDetails(this.logonService.getUserId());
+  }
+
+  public getUserDetails(userId:string) :void {
+    this.logonService.getUser(userId).subscribe(data=>{
+      this.userInfoModel=data;
+      if(data==null){
+      this.router.navigate(['logon']);
+      }
+    });
   }
 
 }

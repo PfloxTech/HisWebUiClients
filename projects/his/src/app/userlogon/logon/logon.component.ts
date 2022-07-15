@@ -34,7 +34,7 @@ export class LogonComponent implements OnInit {
       var data = this.logonService.logonUser(userModel).subscribe(
         (response)=>{
           if(response==null){
-            this.Error="Credentials are invalid";
+            this.Error="Wrong user id or password. Try again or click ‘Trouble in Log in?’ to reset it.";
             return;
           }
        this.router.navigate(['home']);
