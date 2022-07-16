@@ -1,60 +1,25 @@
 <div class="row h-100 border border-primary">
-    <nav class="navbar navbar-light bg-light">
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/dashboard">
-                <img src="../../assets/img/monitor.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Dashboard
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/appointment">
-                <img src="../../assets/img/deadline.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Appointment
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
-                <img src="../../assets/img/hospital-bed.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Beds
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
-                <img src="../../assets/img/hospitalisation.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                IPD
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/opd">
-                <img src="../../assets/img/examination.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                OPD
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
-                <img src="../../assets/img/report.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Reports
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
-                <img src="../../assets/img/lab-tool.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Lab
-            </a>
-        </div>
-        <div class="col-12">
-            <a class="navbar-brand" routerLinkActive="activebutton" routerLink="/ipd">
-                <img src="../../assets/img/gear.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Setting
-            </a>
-        </div>
-    </nav>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="20">
+          <!-- use a disabled button to provide padding for tree leaf -->
+          <!--<button mat-icon-button disabled></button>-->
+          <span><img src="../../assets/img/next.png" /></span>
+          <span (click)="navigate(node)">{{node.text}}</span>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodePaddingIndent="20">
+         <!-- <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>-->
+          <span mat-icon-button matTreeNodeToggle
+          [attr.aria-label]="'Toggle ' + node.name">
+          <img src="../../assets/img/next.png" class="mat-icon-rtl-mirror"/>
+        </span>
+          {{node.text}}
+        </mat-tree-node>
+      </mat-tree>
 </div>

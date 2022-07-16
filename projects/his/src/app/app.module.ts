@@ -6,27 +6,39 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
-import { IpdComponent } from './ipd/ipd.component';
-import { OpdComponent } from './opd/opd.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+import { UserlogonModule } from './userlogon/userlogon.module';
+import { OpdModule } from './opd/opd.module';
+import { IpdModule } from './ipd/ipd.module';
+import { AppointmentModule } from './appointment/appointment.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import{MatMenuModule} from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    IpdComponent,
-    OpdComponent,
     WorkspaceComponent,
     DashboardComponent,
-    AppointmentComponent  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserlogonModule,
+    OpdModule,
+    IpdModule,
+    AppointmentModule,
+    BrowserAnimationsModule,
+    MatTreeModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

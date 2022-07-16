@@ -3,16 +3,20 @@ import { UserLogonRoutingModule } from './userlogon-routing.module';
 import { LogonComponent } from './logon/logon.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
   declarations: [
-    LogonComponent
+    LogonComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    UserLogonRoutingModule    
+    ReactiveFormsModule,
+    UserLogonRoutingModule  
   ],
   providers: [],
   bootstrap: [LogonComponent]
