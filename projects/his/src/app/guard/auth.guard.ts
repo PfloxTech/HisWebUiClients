@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { UserInfoModel } from '../models/user/userinfomodel';
 import { LogonService } from '../services/logon.service';
 
 @Injectable({
@@ -8,20 +9,23 @@ import { LogonService } from '../services/logon.service';
 })
 export class AuthGaurd implements CanActivate {
 
-  userId!:string;
+  userInfoModel!:UserInfoModel;
   constructor(private logonService :LogonService){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      //user id from logon service
-      this.userId = this.logonService.getUserId()
-      if(this.userId!=null && 
-      this.userId!=undefined && 
-      this.userId.length>0){
-          return true;
-      }
-    return false;
+      return this.checkUserInformation(route,state);
+     
   }
-  
+
+
+checkUserInformation(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+  //user id from logon service
+  return this.logonService.getUser(this.logonService.getUserId()).pipe(map((userInfoModel)=>{
+    this.userInfoModel =  userInfoModel;
+    return this.userInfoModel!=null && this.userInfoModel.loginId.trim().length>0;
+  }));
+}
+ 
 }
