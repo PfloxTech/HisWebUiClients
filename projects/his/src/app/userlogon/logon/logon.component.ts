@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LogonService } from '../../services/logon.service';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { UserLogonModel } from '../../services/UserLogonModel';
+import { UserLogonModel } from '../../models/user/UserLogonModel';
 import { MatDialog } from '@angular/material/dialog';
 import { ResetPasswordComponent } from '../reset-password/reset-password.component';
 
