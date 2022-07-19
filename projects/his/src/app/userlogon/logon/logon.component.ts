@@ -37,7 +37,7 @@ export class LogonComponent implements OnInit {
             this.Error="Wrong user id or password. Try again or click ‘Trouble in Log in?’ to reset it.";
             return;
           }
-       this.router.navigate(['home']);
+       this.router.navigate(['hspt']);
       },
       (error)=>{
         this.Error=error.error;

@@ -13,7 +13,7 @@ interface FoodNode {
 const TREE_DATA: FoodNode[] = [
   {
     name: 'dashboard',
-    path:'',
+    path:'dashboard',
     text:'Dashboard'
   },
   {
@@ -112,7 +112,7 @@ export class MenuComponent implements OnInit {
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
   navigate(node:ExampleFlatNode){
-      this.router.navigate([`/${node.name}`,{outlets:{'workspace':[node.path]}}]);  
+      this.router.navigate([`hspt/${node.name}`,{outlets:{'workspace':[node.path]}}]);  
   }
 
 }

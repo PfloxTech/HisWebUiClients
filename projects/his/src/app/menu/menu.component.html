@@ -5,7 +5,7 @@
           <!-- use a disabled button to provide padding for tree leaf -->
           <!--<button mat-icon-button disabled></button>-->
           <span><img src="../../assets/img/next.png" /></span>
-          <span (click)="navigate(node)">{{node.text}}</span>
+          <span (click)="navigate(node)" style="cursor: pointer;">{{node.text}}</span>
         </mat-tree-node>
         <!-- This is the tree node template for expandable nodes -->
         <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodePaddingIndent="20">

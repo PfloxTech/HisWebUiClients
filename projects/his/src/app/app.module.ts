@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserlogonModule } from './userlogon/userlogon.module';
 import { OpdModule } from './opd/opd.module';
 import { IpdModule } from './ipd/ipd.module';
@@ -41,8 +40,7 @@ function initializeAppFactory(
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    WorkspaceComponent,
-    DashboardComponent,
+    WorkspaceComponent
   ],
   imports: [
     BrowserModule,
