@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserInfoModel } from '../../models/user/userinfomodel';
+import { AppointmentService } from '../../services/appointment.service';
 
 @Component({
   selector: 'app-book-appointment',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAppointmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appointmentService:AppointmentService) { }
 
   ngOnInit(): void {
+  }
+
+  scheduleAppointment():void{
+    var userInfo=new UserInfoModel();
+    this.appointmentService.schedule(userInfo).subscribe(data=>{
+      alert(data);
+    });
   }
 
 }

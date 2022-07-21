@@ -1,7 +1,7 @@
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { AppConfig } from './AppConfig';
 
@@ -18,6 +18,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import{MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BodyInterceptor } from './intercepter/body.interceptor';
 
 
 function initializeAppFactory(
@@ -56,12 +57,19 @@ function initializeAppFactory(
     MatMenuModule,
     MatDialogModule
   ],
-  providers: [{
-    provide: APP_INITIALIZER,
-    useFactory: initializeAppFactory,
-    deps: [HttpClient, AppConfig],
-    multi: true,
-  },],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeAppFactory,
+      deps: [HttpClient, AppConfig],
+      multi: true,
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:BodyInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
