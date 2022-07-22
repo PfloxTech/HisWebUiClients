@@ -10,14 +10,19 @@ import { AppConfig } from '../AppConfig';
 })
 export class LogonService {
 
-  private _logonId:string='';
+  private _userInfo:UserInfoModel=new UserInfoModel();
 
   constructor(private httpClient: HttpClient, private appConfig:AppConfig) {
 
   }
 
-  getUserId(): string {
-    return this._logonId;
+  getUserState(): UserInfoModel {
+    return this._userInfo;
+}
+
+setToken(token:string): UserInfoModel {
+  this._userInfo.token=token;
+  return this._userInfo;
 }
 
   getUser(userId:string): Observable<UserInfoModel> {
@@ -25,7 +30,7 @@ export class LogonService {
   }
 
   logonUser(usermodel:UserLogonModel) {
-    this._logonId=usermodel.LogonId
+    this._userInfo.loginId=usermodel.LogonId;
     return this.httpClient.post(`${this.appConfig.baseUrl}api/User/Logon`,usermodel);
   }
 

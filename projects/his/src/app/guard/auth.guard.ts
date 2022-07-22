@@ -22,7 +22,7 @@ export class AuthGaurd implements CanActivate {
 
 checkUserInformation(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
   //user id from logon service
-  return this.logonService.getUser(this.logonService.getUserId()).pipe(map((userInfoModel)=>{
+  return this.logonService.getUser(this.logonService.getUserState().loginId).pipe(map((userInfoModel)=>{
     this.userInfoModel =  userInfoModel;
     return this.userInfoModel!=null && this.userInfoModel.loginId.trim().length>0;
   }));

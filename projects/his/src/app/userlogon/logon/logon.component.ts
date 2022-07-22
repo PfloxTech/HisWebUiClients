@@ -32,11 +32,12 @@ export class LogonComponent implements OnInit {
       userModel.LogonId=this.logonForm.value.loginId;
       userModel.Password=this.logonForm.value.password;
       var data = this.logonService.logonUser(userModel).subscribe(
-        (response)=>{
+        (response:any)=>{
           if(response==null){
             this.Error="Wrong user id or password. Try again or click ‘Trouble in Log in?’ to reset it.";
             return;
           }
+          this.logonService.setToken(response.token);
        this.router.navigate(['hspt']);
       },
       (error)=>{

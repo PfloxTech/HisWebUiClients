@@ -3,4 +3,5 @@ export class UserInfoModel{
         public middleName: string='';
         public lastName: string='';
         public loginId:string='';
+        public token:string='';
 }

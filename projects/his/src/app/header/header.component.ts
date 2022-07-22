@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private logonService:LogonService, private router :Router) { }
 
   ngOnInit(): void {
-     this.getUserDetails(this.logonService.getUserId());
+     this.getUserDetails(this.logonService.getUserState().loginId);
   }
 
   public getUserDetails(userId:string) :void {

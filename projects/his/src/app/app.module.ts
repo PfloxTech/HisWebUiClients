@@ -18,7 +18,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import{MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
-import { BodyInterceptor } from './intercepter/body.interceptor';
+import { BodyInterceptor } from './interceptor/body.interceptor';
+import { HeaderInterceptor } from './interceptor/header.interceptor';
 
 
 function initializeAppFactory(
@@ -63,6 +64,11 @@ function initializeAppFactory(
       useFactory: initializeAppFactory,
       deps: [HttpClient, AppConfig],
       multi: true,
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:HeaderInterceptor,
+      multi:true
     },
     {
       provide:HTTP_INTERCEPTORS,
