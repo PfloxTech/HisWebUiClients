@@ -4,4 +4,5 @@ export class tosterMsgModel{
     public Messages!:Array<string>;
     public Type!:toasterType;
     public ClassName!:string;
+    public CallBack!:Function;
 }

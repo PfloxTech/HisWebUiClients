@@ -8,7 +8,7 @@ import { toasterType } from '../models/toatser/toasterType';
   providedIn: 'root'
 })
 export class ToasterService {
-  durationInSeconds:number=500;
+  durationInSeconds:number=10;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   msgModel!:tosterMsgModel;
@@ -32,6 +32,10 @@ export class ToasterService {
     this.openSnackBar(this.msgModel)
   }
 
+public close():void{
+  this._snackBar.dismiss();
+}
+
   private getClassName(type:toasterType):string{
     switch(type){
       case toasterType.Error:
@@ -54,4 +58,5 @@ export class ToasterService {
       panelClass: [this.getClassName(msgModel.Type)]
     });
   }
+
 }
