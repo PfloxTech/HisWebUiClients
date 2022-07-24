@@ -1,0 +1,16 @@
+<div class="{{msgModel.ClassName}} text-white">
+    <div>
+        <h3>{{msgModel.Title}}</h3>
+    </div>
+    <div>
+        <ul *ngFor="let msg of msgModel.Messages">
+            <li>{{msg}}</li>
+        </ul>
+        <button class="btn btn-dark float-end ms-2">
+            OK
+        </button>
+        <button class="btn btn-dark float-end ms-2">
+            Close
+        </button>
+    </div>
+</div>

@@ -20,6 +20,8 @@ import{MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BodyInterceptor } from './interceptor/body.interceptor';
 import { HeaderInterceptor } from './interceptor/header.interceptor';
+import { SnackbarmsgComponent } from './message/snackbarmsg/snackbarmsg.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 function initializeAppFactory(
@@ -42,7 +44,8 @@ function initializeAppFactory(
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    SnackbarmsgComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ function initializeAppFactory(
     MatTreeModule,
     MatIconModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     {

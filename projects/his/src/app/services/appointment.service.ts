@@ -11,8 +11,8 @@ export class AppointmentService {
 
   constructor(private httpClient:HttpClient,private appConfig:AppConfig) { }
 
-public schedule(userModel:UserInfoModel): Observable<boolean> {
-  return this.httpClient.post<boolean>(`${this.appConfig.baseUrl}api/appointment/schedule`,userModel);
+public schedule(userModel:UserInfoModel): Observable<any> {
+  return this.httpClient.post<any>(`${this.appConfig.baseUrl}api/appointment/schedule`,userModel);
 }
 
 }
